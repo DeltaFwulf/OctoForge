@@ -15,17 +15,30 @@ def calculateQ():
     densityAmbient = calcDensity(pAmbient, R, tAmbient)
 
     # chamber air parameters
-    tChamber = 1100
+    Tchamber = 1373
     pChamber = pAmbient
-    densityChamber = calcDensity(pChamber, R, tChamber)
+    densityChamber = calcDensity(pChamber, R, Tchamber)
 
-    # chamber parameters
     wallThickness = 0 # Plot a surface for power_loss(thickness, temperature)
     innerRadius = 0.14
     outerRadius = innerRadius + wallThickness
     cylHeight = 0
+    innerWallArea = pi * innerRadius**2 * cylHeight
+    outerWallArea = pi * outerRadius**2 * cylHeight
+    kCyl = 0
 
-    
+
+    # set chamber air temperature, outer wall surface temperature, ambient air temperature, power loss
+
+    # solve for wall thickness and internal wall surface temperature
+
+    # iterate wall thickness until the power loss matches
+
+    # output the final wall thickness, efficiency
+
+    # (to get what we want, we can run through an array of both wall thickness solutions and heat losses until the solution is that for 
+    # a wall at the same thickness as in the high heat case; this allows us to predict performance over a temperature range)
+
 
 def calcViscosity(Tfilm):
     
@@ -84,7 +97,7 @@ def calcConductivity(TFilm, density):
     return kCrit * (k0 + dk)
 
 
-def rConv(diameter, L, Tsurf, Tair, Cp, density):
+def rConv(diameter, L, Tsurf, Tair, Cp, density, area):
 
     Tfilm = (Tsurf + Tair) / 2
     viscosity = calcViscosity(Tfilm)
@@ -101,4 +114,12 @@ def rConv(diameter, L, Tsurf, Tair, Cp, density):
         print("Nusselt conditions are not met")
         Nusselt = 0
 
-    # Calculate the convection resistance from these values
+    hMean = Nusselt * k / L
+
+    return 1 / (hMean * area)
+
+
+# TODO: calculate cylindrical conduction resistance
+def rCond(outerRadius, innerRadius, L, kCyl):
+
+    return ln(outerRadius/innerRadius) / (2 * pi * L* kCyl)

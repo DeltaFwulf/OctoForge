@@ -62,8 +62,33 @@ $D_2 = -23.0762400$
 $D_3 = 1.65049430$
 $D_4 = -0.191148175$
 
-How do we iterate to arrive at the correct answer for the cylinder surface temperatures? (calculating the film temperatures?)
+How do we iterate to arrive at the correct answer for the cylinder surface temperatures? (calculating the film temperatures?) There seem to be two unknowns (Ts1, Ts2) and one equation
 
-Okay, about to go to sleep but I think that if I define the power loss, the temperatures may be definable
+**19/08/2023**
+Okay, so the initial question was incomplete. I need to set more design constraints to be able to solve for the wall thickness. I'll set the outside wall temperature to a temperature that's either:
 
+1. safe to touch comfortably - I need to find a temperature chart for this
+2. low enough to hold the handles (modelling conduction)
+3. some other arbitrary value if we use a shroud like [Here](https://www.hswalsh.com/product/melting-crucible-furnace-3kg-italian-manufactured-tf58b)
+
+I'll also be aiming to minimise the heat loss for a given chamber-ambient temperature difference within some design constraint (I can't just make the walls 10km thick due to cost and maintenance restrictions, never mind portability lol)
+
+I'll define the thermal efficiency of the furnace at temperature T as $1-(\frac{Q_{loss}} {Q_{max}})$ for the time being, and aim for an efficiency greater than 80% at 1000$^{\circ}$C
+
+So, we can solve for wall thickness given a certain heat loss, chamber temperature and wall outer temperature. Therefore we can solve for furnace performance over a range of temperatures (if not efficiently): 
+1. solve the specified case to get target wall thickness
+2. for each temperature we want to investigate, alter the heat flux and solve for wall thickness as in the specified case; when the wall thickness equals the target wall thickness this is the performance of the furnace at this temperature. We can use a shooting method to obtain results relatively efficiently.
+
+We can predict floor and lid performances similarly, assuming the furnace is airtight
+
+To get better results, we will need to run a thermal simulation of the frame after initial models have been produced in software such as openFoam.
+
+The results produced here can also be used to inform the convection-radiation analysis of the heating elements
+
+
+# Heating Element Analysis
+
+## You guessed it, it's a resistance network (literally)
+
+we will model the wire as one long coil subject to blackbody / graybody radiation and convection in a large black/grey body chamber (partially accurate assumptions).
 
