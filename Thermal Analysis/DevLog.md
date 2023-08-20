@@ -85,10 +85,37 @@ To get better results, we will need to run a thermal simulation of the frame aft
 
 The results produced here can also be used to inform the convection-radiation analysis of the heating elements
 
+### Setting boundary conditions 
+
+How hot can the outer wall get if not shrouded? [Possible Source](https://ntrs.nasa.gov/api/citations/20100020960/downloads/20100020960.pdf)
+
+For testing, I'll use 44$^{\circ}$C, but I'll figure out the $k{\rho}c$ of fire bricks later on
+
+**20/08/2023**
+
+Okay, so the method for getting the design point performance is actually very convoluted:
+1. Set outer wall radius and outer wall temperature
+2. Calculate heat flow from outer wall condition
+3. Use shooting method to find inner wall temperature
+4. using a shooting method, iterate for chamber temperature to satisfy conservation of energy
+5. repeat steps 2-4, varying outer radius until the chamber temperature converges to target
+6. vary outer wall temperature  and solve for chamber temperature again until heat flow matches target
+
+I'm almost definitely sure that by setting Ts2 to enforce target heat flow in step 1 is possible, however the stability of this algorithm would probably go WAY down, so for now I'm going to do it this way as it seems to be able to converge most of the time.
+
+To calculate the performance of this furnace over different chamber temperatures, we can now fix the wall thickness and not enforce a heat flow target, simply converge to the desired chamber temperature and treat heat flow as a target
+
+I found something saying that $k_{wall}$ will be about 0.2-0.4 [Source](http://www.ccewool.com/News/main-difference-between-insulating-fire-brick-and-refractory-brick/#:~:text=Heat%20conductivity%20of%20insulating%20fire,better%20than%20refractory%20fire%20brick.)
+We'll likely use more VITCAS bricks [Source](https://shop.vitcas.com/insulating-fire-bricks-vitcas-grade-30.html)
+
+$R_{conv,2}$ is returning a complex value, one sec
+now Ts1 is coming back complex, might be to do with Q? I'll check in the morning, time to snooze
 
 # Heating Element Analysis
 
 ## You guessed it, it's a resistance network (literally)
 
 we will model the wire as one long coil subject to blackbody / graybody radiation and convection in a large black/grey body chamber (partially accurate assumptions).
+
+
 
