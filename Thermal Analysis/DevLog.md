@@ -10,6 +10,8 @@ Total resistance for a single wall, $R_{wall}$, is equal to the sum of the inlin
 
 To save manually looking up values in dry air tables, I will create functions to predict air conductivity and viscosity:
 
+[here](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)is a good source for maths formatting using MathJax
+
 ### Assumptions
 - air is at 101325 Pa
 - mean mass of an "air" molecule to be $0.02896 \div 6.022\ast 10^{23} = 4.809 \ast 10^{-26}$ kg
@@ -101,7 +103,7 @@ Okay, so the method for getting the design point performance is actually very co
 5. repeat steps 2-4, varying outer radius until the chamber temperature converges to target
 6. vary outer wall temperature  and solve for chamber temperature again until heat flow matches target
 
-I'm almost definitely sure that by setting Ts2 to enforce target heat flow in step 1 is possible, however the stability of this algorithm would probably go WAY down, so for now I'm going to do it this way as it seems to be able to converge most of the time.
+I'm almost definitely sure that by setting $T_{s,2}$ to enforce target heat flow in step 1 is possible, however the stability of this algorithm would probably go WAY down, so for now I'm going to do it this way as it seems to be able to converge most of the time.
 
 To calculate the performance of this furnace over different chamber temperatures, we can now fix the wall thickness and not enforce a heat flow target, simply converge to the desired chamber temperature and treat heat flow as a target
 
@@ -111,11 +113,41 @@ We'll likely use more VITCAS bricks [Source](https://shop.vitcas.com/insulating-
 $R_{conv,2}$ is returning a complex value, one sec
 now Ts1 is coming back complex, might be to do with Q? I'll check in the morning, time to snooze
 
+**21/08/2023**
+The problem seems to be the conductivity calculation returning negative, everything else seems to be returning normal results (the viscosity equation is p cool)
+
+**21/08/2023**
+I was using $T_{crit}$ not $T_R$ in the conductivity calculation. For some reason, the chamber temperature solver goes unstable after a few iterations, I'll see tomorrow if there's an issue in the chamber temp solver and might have to switch to an inherently stable solver (bisection, etc). I'll also sweep through a range of chamber temperatures and see if the line is super shaky
+
+**26/08/2023**
+fuck me, there was a g1 where there should have been a g2, so errors weren't being calculated properly, leading to a runaway chamber temperature
+
+Another seemingly big issue is that if Ts2 is assumed constant when varying $r_{outer}$, power constantly increases at the same time as thermal resistance in the wall, leading to runaway chamber temperatures. I will find, for each value of $T_{s,2}$, the outer radius that gives the target chamber temperature using the shooting method:
+
+**Definition of Shooting Method** (I can't remember its real name so just rederive it every time I need it)
+
+**Assumption:** there is a positive correlation between guesses and cost function output. 
+
+1. make two initial guesses, $g_1$, and $g_2$.
+2. calculate the cost function output for these errors i.e. the difference in heat output to target (make sure it is positively correlated with guess magnitude or you may have a problem)
+3. calculate the new guess by: $g_3 = g_1 + (\frac{e_1}{e_1-e_2}) \ast (g_2 - g_1)$
+4. let $g_1 = g_2$ then let $g_2 = g_3$
+5. repeat until $e_2 < e_{max}$
+6. return $g_2$ and whatever else useful you may have calculated
+
+this works, the last layer is to solve for $T_{s,2}$ that requires a specific wall thickness (brick thickness in this case)
+
+The next steps will be to create a planar wall version to calculate conductive losses and inner wall temps, but they will be called as variant functions (as arguments into the higher function or smth)
+
+I'll solve for the lowest outer wall temps that I can get away with for the time being, which can give answers for all dimensions, then begin modelling the heating element in a similar (but hopefully slightly simpler) way.
+
+As a sanity check, I'll attempt to perform a simulation on the furnace once the chamber has an initial model (this will take ages but should provide a clearer answer)
+
 # Heating Element Analysis
 
 ## You guessed it, it's a resistance network (literally)
 
-we will model the wire as one long coil subject to blackbody / graybody radiation and convection in a large black/grey body chamber (partially accurate assumptions).
+we will model the wire as one long coil subject to blackbody / grey-body radiation and convection in a large black/grey body chamber (partially accurate assumptions).
 
 
 
