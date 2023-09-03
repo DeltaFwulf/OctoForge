@@ -1,32 +1,31 @@
-# Calculates the heat loss from a cylinder using a resistance network
-
+# calculates the heat loss from a furnace using an analytical resistance network model
 # SI units unless specified
+
 from math import exp, sqrt, pi, log
 import numpy as np
 import matplotlib.pyplot as plt
 
 def main():
 
-    # ambient conditions
     Tambient = 287
-    pAmbient = 101325
-    Cp = 1005 # TODO: change Cp and R for chamber gas if using a different mix
-    gasConstant = 287
+    Tchamber = 1373
 
-    # chamber conditions
+    pAmbient = 101325
     pChamber = pAmbient
 
+    Cp = 1005 # n.b. if we plan to flush the furnace with another gas mix, we need to change Cp and R within the chamber
+    gasConstant = 287
+    
     # fixed furnace parameters
-    rInner = 0.07 # TODO: get this from the crucible size (need to order a crucible)
+    rInner = 0.07 # TODO: get this from the crucible size
     hCyl = 0.2
-    kWall = 0.4 # W/m*K
-
-    # Solve the furnace design condition:
-    Tchamber = 1373
+    kWall = 0.4
 
     rOuter, QWall = calcWallThickness(Tchamber, rInner, 373, hCyl, Tambient, pAmbient, pChamber, Cp, gasConstant, kWall)
     print("wall thickness: " + str((rOuter - rInner) * 1000) + " mm, heat loss: " + str(QWall) + " W for Tchamber = " + str(Tchamber) + " K")
 
+    # Assume inner wall temperature is equal to the chamber target temperature
+    # > calculate the heat loss from the wall and the heat loss to the wall 
 
 
 def calcViscosity(Tfilm):
@@ -46,7 +45,6 @@ def calcDensity(pressure, gasConstant, temp):
 
 
 
-# this is returning negative for some reason
 def calcConductivity(Tfilm, density):
     
     Tcrit = 132.52
@@ -97,17 +95,14 @@ def rConv(diameter, L, Tsurf, Tair, Cp, area, pressure, gasConstant):
     density = calcDensity(pressure, gasConstant, Tfilm)
     k = calcConductivity(Tfilm, density)
 
-    #print("Tfilm: " + str(Tfilm))
-    #print("viscosity: " + str(viscosity))
-    #print("density: " + str(density))
-    #print("conductivity: " + str(k))
-
     prandtl = Cp * viscosity / k
     grashof = (density**2) * 9.81 * (2 / (Tsurf + Tair)) * abs(Tsurf - Tair) * (L**3) / (viscosity**2)
     raleigh = grashof * prandtl
 
     # can we treat the cylinder as a vertical flat plate?
-    #if(diameter > 35 * L / (grashof**0.25)):
+    if(diameter < 35 * L / (grashof**0.25)):
+        print("Nusselt calculation may be less accurate")
+
     Nusselt = 0.825 + ((0.387 * raleigh**(1/6)) / ((1 + (0.492 / prandtl)**(9/16))**(8/27)))**2
     hMean = Nusselt * k / L
 
@@ -115,10 +110,10 @@ def rConv(diameter, L, Tsurf, Tair, Cp, area, pressure, gasConstant):
 
 
 
-def rCond(outerRadius, innerRadius, L, kCyl):
+def rWall(outerRadius, innerRadius, L, kCyl):
 
-    rCond = log(outerRadius/innerRadius) / (2 * pi * L* kCyl)
-    return rCond
+    rWall = log(outerRadius/innerRadius) / (2 * pi * L* kCyl)
+    return rWall
 
 
 
@@ -127,11 +122,9 @@ def calcTs1(Rcyl, Ts2, Q):
     tol = 1e-5
     e1 = 2 * tol
 
-    # use a shooting method to obtain Ts1
     g1 = 2 * Ts2
     g2 = Ts2 + 10
 
-    # get heat flow errors for both 
     while(abs(e1) > tol):
 
         e1 = Q - ((g1 - Ts2) / Rcyl)
@@ -144,7 +137,7 @@ def calcTs1(Rcyl, Ts2, Q):
             g1 = g2
             g2 = g3
         
-    return g2 # TODO: should this actually be g3?
+    return g2
 
 
 
@@ -153,35 +146,31 @@ def calcTchamber(rInner, rOuter, hCyl, Ts2, Tambient, pAmbient, pChamber, Cp, ga
     As1 = pi * (rInner**2) * hCyl
     As2 = pi * (rOuter**2) * hCyl
 
-    # Calculate heat flow through the outer wall
+    # convective heat loss from outer wall
     rConv2 = rConv(2 * rOuter, hCyl, Ts2, Tambient, Cp, As2, pAmbient, gasConstant)
     Q = (Ts2 - Tambient) / rConv2
     print("calcTchamber: heat loss at outer wall = " + str(Q))
 
-    # calculate Ts1
-    rCyl = rCond(rOuter, rInner, hCyl, kWall)
+    # find inner wall temperature from conservation of energy
+    rCyl = rWall(rOuter, rInner, hCyl, kWall)
     Ts1 = calcTs1(rCyl, Ts2, Q)
     
     print("Ts1: " + str(Ts1))   
 
     tol = 1e-5
     e1 = 2 * tol
-    Q2 = -1 # use for error checking
+    Q2 = -1
 
     g1 = Ts1 * 1.5
     g2 = Ts1 + 1
 
     while(abs(e1) > tol):
 
-        # Calculate heat loss from the wall
         Q1 = (g1 - Ts1) / rConv(2 * rInner, hCyl, Ts1, g1, Cp, As1, pChamber, gasConstant)
-        Q2 = (g2 - Ts1) / rConv(2 * rInner, hCyl, Ts1, g2, Cp, As1, pChamber, gasConstant) # you little shit
+        Q2 = (g2 - Ts1) / rConv(2 * rInner, hCyl, Ts1, g2, Cp, As1, pChamber, gasConstant)
 
         e1 = Q - Q1
         e2 = Q - Q2
-
-        #print("g1: " + str(g1) + ", g2: " + str(g2))
-        #print("e1: " + str(e1) + ", e2: " + str(e2))
 
         g3 = g1 + ((e1 / (e1 - e2)) * (g2 - g1))
 
@@ -193,14 +182,12 @@ def calcTchamber(rInner, rOuter, hCyl, Ts2, Tambient, pAmbient, pChamber, Cp, ga
     
 
 
-# I can't just use shooting method like this here; there isn't a roughly directly proportional relationship between r and Q
 def calcWallThickness(targetTemp, rInner, Ts2, hCyl, Tambient, pAmbient, pChamber, Cp, gasConstant, kWall):
 
-    tol = 1e-4 # m
+    tol = 1e-4
     e1 = 2 * tol
     Q2 = -1
 
-    # iterate outer radius until the chamber temperature is close enough to the target
     r1 = rInner + 0.01
     r2 = rInner * 2
     
@@ -213,8 +200,6 @@ def calcWallThickness(targetTemp, rInner, Ts2, hCyl, Tambient, pAmbient, pChambe
 
         e1 = targetTemp - Tc1
         e2 = targetTemp - Tc2
-
-        print("e1 = " + str(e1) + ", e2 = " + str(e2))
 
         r3 = r1 + ((e1 / (e1 - e2)) * (r2 - r1))
 
@@ -232,7 +217,6 @@ def calcOuterWallTemperature(Qtarget, Tambient, targetTemp, rInner, hCyl, pAmbie
     e1 = 2 * tol
     rOuter2 = -1
 
-    # calculate the heat loss from the wall for a given chamber temperature:
     T1 = Tambient + 1
     T2 = 317
 
@@ -260,38 +244,35 @@ def sweepTchamber(rInner, rOuter, hCyl, Ts2, Tambient, pAmbient, pChamber, Cp, g
     As1 = pi * (rInner**2) * hCyl
     As2 = pi * (rOuter**2) * hCyl
 
-    # Calculate heat flow through the outer wall
+    # convective heat loss from the outer wall
     rConv2 = rConv(2 * rOuter, hCyl, Ts2, Tambient, Cp, As2, pAmbient, gasConstant)
     Qouter = (Ts2 - Tambient) / rConv2
 
-    # calculate Ts1
-    rCyl = rCond(rOuter, rInner, hCyl, kWall)
+    # find inner wall temperature from conservation of energy
+    rCyl = rWall(rOuter, rInner, hCyl, kWall)
     Ts1 = calcTs1(rCyl, Ts2, Qouter)   
 
     Tchamber = np.linspace(Ts1 + 1, 1373, 50)
-    Qchamber = np.zeros(Tchamber.size) # make sure this is the correct dimension (you'll find out soon enough)
+    Qchamber = np.zeros(Tchamber.size)
 
-    # create lists for Tchamber and Q, plot them
     for i in range(0, Tchamber.size):
 
         Qchamber[i] = (Tchamber[i] - Ts1) / rConv(2 * rInner, hCyl, Ts1, Tchamber[i], Cp, As1, pChamber, gasConstant)
         
-    # plot results
     plt.plot(Tchamber, Qchamber, '-')
     plt.xlabel("Chamber temperature, K")
     plt.ylabel("Heat loss, W")
     plt.show()
 
 
+
 def sweepOuterRadius(rInner, Ts2, hCyl, Tambient, pAmbient, pChamber, Cp, gasConstant, kWall):
 
-    # arrays for radius and furnace heat loss
     outerRadius = np.linspace(rInner + 0.001, rInner + 0.114, 100)
     heatLoss = np.zeros(outerRadius.size)
     chamberTemp = np.zeros(outerRadius.size)
     
     for i in range(0, outerRadius.size):
-
         chamberTemp[i], heatLoss[i] = calcTchamber(rInner, outerRadius[i], hCyl, Ts2, Tambient, pAmbient, pChamber, Cp, gasConstant, kWall)
 
     plt.plot((outerRadius - rInner) * 1000, chamberTemp, '-')
@@ -304,8 +285,7 @@ def sweepOuterRadius(rInner, Ts2, hCyl, Tambient, pAmbient, pChamber, Cp, gasCon
     
 # see how wall thickness varies with outer wall temperature, find the cut-off temperature for the thickness of a brick
 def sweepTs2(Tchamber, rInner, hCyl, Tambient, pAmbient, pChamber, Cp, gasConstant, kWall):
-
-    # arrays for wall thickness and outer wall temperatures
+    
     Ts2 = np.linspace(373, 573, 100)
     wallThickness = np.zeros(Ts2.size)
 

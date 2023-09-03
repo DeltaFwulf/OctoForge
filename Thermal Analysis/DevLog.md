@@ -124,7 +124,7 @@ fuck me, there was a g1 where there should have been a g2, so errors weren't bei
 
 Another seemingly big issue is that if Ts2 is assumed constant when varying $r_{outer}$, power constantly increases at the same time as thermal resistance in the wall, leading to runaway chamber temperatures. I will find, for each value of $T_{s,2}$, the outer radius that gives the target chamber temperature using the shooting method:
 
-**Definition of Shooting Method** (I can't remember its real name so just rederive it every time I need it)
+**Definition of Shooting Method** (I can't remember its real name so I just rederive it every time I need it)
 
 **Assumption:** there is a positive correlation between guesses and cost function output. 
 
@@ -143,11 +143,26 @@ I'll solve for the lowest outer wall temps that I can get away with for the time
 
 As a sanity check, I'll attempt to perform a simulation on the furnace once the chamber has an initial model (this will take ages but should provide a clearer answer)
 
+**Sanity Check**
+The heat loss from the wall seems very low. To check if we're WAY off, I'm going to model the furnace as a planar wall and measure the conductive heat loss through it given assumed inner surface temperature and wall thickness.
+
+Cylinder prediction: ($T_{s1} = 1373 K$, $T_{s2} = 373K$) = 200 W
+Cylinder prediction: ($T_{s1} = 416 K$, $T_{s2} = 373K$)  = 17 W
+
+Planar wall prediction: ($T_{s1} = 1373 K$, $T_{s2} = 373K$) = 700 W
+Planar wall prediction: ($T_{s1} = 416 K$, $T_{s2} = 373K$)  = 30.4 W
+
+It seems that the prediction for inner wall temperature may be too low? Why is the solved value of $T_{s1} << T_{chamber}$?
+
+I'll set $T_{s1}$ to be equal to the chamber temperature of 1100$^{\circ}$C. I believe this is a better (and conservative) approximation as the inside of the furnace will not form a well developed boundary layer as there is no net flow upwards along the chamber wall. This gives an estimated heat loss of 400W through the walls (this makes more sense intuitively).
+
+## Results
+
+some table of results here
+
+
 # Heating Element Analysis
 
 ## You guessed it, it's a resistance network (literally)
 
 we will model the wire as one long coil subject to blackbody / grey-body radiation and convection in a large black/grey body chamber (partially accurate assumptions).
-
-
-
