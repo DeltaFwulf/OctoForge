@@ -56,10 +56,13 @@ which means...
 
 $f = 1.61⋅10^5$Hz
 
-That's significantly greater than 20KHz so i'm happy.
+~~That's significantly greater than 20KHz so i'm happy.~~
+
+##### EDIT
+I'm not happy. I forget this time $t$ is just the time it takes to charge up the gate. The switching time is equal to the time it takes to charge up and charge down the gate. So the time is actually doubled, the frequency is actually halved and the simplification i made earlier means the frequency is even lower. This means even if a microcontroller could drive the MOSFET it would be spending most of its time in periods of switching (is this even the correct wording?) where the voltage on the gate is somewhere between 0v and 12v. The resistance at these voltages is greater than it is at 12v and so the power losses would be higher. So i'm gonna say my next step is to investigate MOSFET drivers.
 
 #### Conclusion
-A max current of 29.3A, a max power of 1465W given that max current, and a max frequency of 161KHZ makes this MOSFET suitable. All for the low low price of 2.
+A max current of 29.3A, a max power of 1465W given that max current, ~~and a max frequency of 161KHZ~~ makes this MOSFET suitable when paired with a MOSFET driver. All for the low low price of 2.
 
 
 
