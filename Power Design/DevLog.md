@@ -64,6 +64,10 @@ I'm not happy. I forget this time $t$ is just the time it takes to charge up the
 #### Conclusion
 A max current of 29.3A, a max power of 1465W given that max current, ~~and a max frequency of 161KHZ~~ makes this MOSFET suitable when paired with a MOSFET driver. All for the low low price of 2.
 
+## 06/09/23
+
+I've been toying around with [this paper](https://sci-hub.st/10.1080/00207217.2019.1625973) in [Falstad CircuitJS](http://falstad.com/circuit/circuitjs.html). You can find the file for the circuit i made [here](obsidian://open?vault=furnace-mk2&file=Power%20Design%2FResources%2FMOSFET_OCP). To open it just copy the text from within the file to the "import from text" option under File in CircuitJS. It works somewhat but trying to get it to shutoff at exactly 29.3A is difficult. I think experimentation should continue in a more robust simulation software - one that comes to mind is the real world.
+
 
 
 
