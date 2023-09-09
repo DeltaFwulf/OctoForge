@@ -68,6 +68,18 @@ A max current of 29.3A, a max power of 1465W given that max current, ~~and a max
 
 I've been toying around with [this paper](https://sci-hub.st/10.1080/00207217.2019.1625973) in [Falstad CircuitJS](http://falstad.com/circuit/circuitjs.html). You can find the file for the circuit i made [here](obsidian://open?vault=furnace-mk2&file=Power%20Design%2FResources%2FMOSFET_OCP). To open it just copy the text from within the file to the "import from text" option under File in CircuitJS. It works somewhat but trying to get it to shutoff at exactly 29.3A is difficult. I think experimentation should continue in a more robust simulation software - one that comes to mind is the real world.
 
+## 09/09/23
+
+I have devised a way for the shut off current to be much more precise. The circuit described in the paper relies on the voltage drop across the diode to be a specific value V<sub>D</sub>. This value is dependent on the current across said diode. A current which changes when adjustments are made to voltage divider and when the base of the transistor starts conducting. However by separating the diode and the transistors base with an opamp set up as a comparator there will be very minimal change in current across the diode. With the voltage V<sub>F</sub> being measured by the opamp's negative terminal and a reference voltage V<sub>ref</sub> being measured by the opamp's positive terminal, the exact moment the current i<sub>d</sub> is sufficiently high to cause V<sub>F</sub> to increase above V<sub>ref</sub> can be detected and capacitor C<sub>d</sub> will begin to be charged by the opamps 12v output. 
+
+I have modified my CircuitJS circuit to demonstrate this [here](obsidian://open?vault=furnace-mk2&file=Power%20Design%2FResources%2FMOSFET_OCP_V2). The scopes along the bottom of the screen are used to track some specific values. Namely the voltages across C<sub>d</sub> (in red) and C<sub>t</sub> (in green), current across the current across the MOSFET and heating element (in yellow), and the voltages V<sub>F</sub> (in red) and V<sub>ref</sub>.
+
+### Using the CircuitJS demonstration
+It might not be so intuitive how exactly to use this circuit within CircuitJS so here's a quick guide. 
+1. Wait for the voltage, V<sub>b</sub>, across C<sub>t</sub>, represented by the green line on scope 1, to increase to 2v. Current, i<sub>d</sub>, should begin to flow through the MOSFET, represented by the yellow line in scope 2.
+2. You should notice that V<sub>F</sub> should have changed to a value closer to V<sub>ref</sub>, represented by the red and green lines in scope 3. By increasing the value of the slider labelled "Load" on the right side of the screen you will decrease i<sub>d</sub> and V<sub>F</sub>.
+3. By decreasing the value of load slowly you will increase i<sub>d</sub> and V<sub>F</sub>. The moment V<sub>F</sub> is greater than V<sub>ref</sub>, V<sub>b</sub> should increase rapidly causing the transistor to dump the charge stored by C<sub>t</sub> and subsequently turn the MOSFET off.
+
 
 
 
