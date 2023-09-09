@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a464013283b13a3a",
+        "id": "f09f0c1319698dc9",
         "type": "tabs",
         "children": [
           {
-            "id": "133dbd1b1ee2894e",
+            "id": "4f6dcd8fbcd0dbf1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -16,16 +16,6 @@
                 "file": "Thermal Analysis/DevLog.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "abd50efa37dc3e31",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.5"
               }
             }
           }
@@ -156,9 +146,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "133dbd1b1ee2894e",
+  "active": "4f6dcd8fbcd0dbf1",
   "lastOpenFiles": [
+    "Thermal Analysis/Outline.md",
+    "Budget.md",
     "Thermal Analysis/DevLog.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
     "Thermal Analysis/Scripts/heatLossSovler.py",
     "Thermal Analysis/Scripts/wallHeatLoss.py"
   ]

@@ -1,59 +1,81 @@
 # given innerWallTemp, wallThickness, Tambient, find heat loss through the furnace walls
-
 # SI units unless specified
 
+# TODO instead of just printing "nusselt calcualation may be less accurate", tag the result with an approval or rejection
+
 from math import sqrt, pi, exp, log
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import cm
+from random import uniform
 
 def main():
 
     innerWallTemp = 1373
-    Tambient = 287 # see the effects of a cold winter's day
-
+    Tambient = 273.15 + 15
     pAmbient = 101325
-    pChamber = pAmbient
-
-    # This assumes the chamber gas mix is equal to ambient air: if you want to play with this, specify a chamber gas
     Cp = 1005
     gasConstant = 287
 
-    innerRadius = 0.07
-    wallThickness = 0.114
-    outerRadius = innerRadius + wallThickness
-    hCyl = 0.2
-    kWall = 0.4
+    chamberRadius = 0.035
+    lidThickness = 0.076
+    baseThickness = 0.076
 
-    # use shooting method to find the value of Ts2 that satisfies conservation of energy
-    guess1 = Tambient + 100
-    guess2 = innerWallTemp - 100
+    """Wall properties"""
+    hCyl = 0.145
+    kBrick = 0.4
+    kRockWool = 0.2
+    kWood = 0.3
 
-    tol = 1e-4
-    e1 = 2 * tol
+    brickThickness = 0.076
+    rockWoolThickness = 0.200
+    casingThickness = 0.012
 
-    rCyl = rWall(outerRadius, innerRadius, hCyl, kWall)
-    outerArea = 2 * pi * outerRadius * hCyl
+    conductivities = [kBrick, kRockWool, kWood]
+    thicknesses = [brickThickness, rockWoolThickness, casingThickness]
 
-    Qcond2 = 0
+    outerRadius = chamberRadius + brickThickness + rockWoolThickness + casingThickness
+    rCyl = rWall(chamberRadius, hCyl, conductivities, thicknesses)
 
-    while(abs(e1) > tol):
+    outerWallTemp, Qwall = wallHeatLoss(innerWallTemp, outerRadius, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)
+    
+    # assume the lid and base are the width of the furnace (slightly conservative)
+    perimiter = 2 * pi * (chamberRadius + sum(thicknesses))
+    area = pi * (chamberRadius + sum(thicknesses))**2
 
-        # wall heat loss
-        Qcond1 = (innerWallTemp - guess1) / rCyl
-        Qcond2 = (innerWallTemp - guess2) / rCyl
+    outerLidTemp, Qlid = planarWallHeatLoss(area, perimiter, lidThickness, Tambient, Cp, gasConstant, pAmbient, kBrick, "top")
+    outerBaseTemp, Qbase = planarWallHeatLoss(area, perimiter, baseThickness, Tambient, Cp, gasConstant, pAmbient, kBrick, "bottom")
 
-        # convection heat loss
-        Qconv1 = (guess1 - Tambient) / rConv(2 * outerRadius, hCyl, guess1, Tambient, Cp, outerArea, pAmbient, gasConstant)
-        Qconv2 = (guess2 - Tambient) / rConv(2 * outerRadius, hCyl, guess2, Tambient, Cp, outerArea, pAmbient, gasConstant)
+    print("Heat loss from wall = " + str(Qwall) + " W for outer temp = " + str(outerWallTemp - 273.15) + " C")
+    print("Heat loss from lid = " + str(Qlid) + " W for outer temp = " + str(outerLidTemp - 273.15) + " C")
+    print("Heat loss from base = " + str(Qbase) + " W for outer temp = " + str(outerBaseTemp - 273.15) + " C")
 
-        e1 = Qcond1 - Qconv1
-        e2 = Qcond2 - Qconv2
+    QvsWallThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, conductivities, Tambient, pAmbient, Cp, gasConstant)
+    QvsRockWoolThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, conductivities, Tambient, pAmbient, Cp, gasConstant)
+    #QvsChamberTemp(chamberRadius, wallThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)
+    plt.show()
 
-        guess3 = guess1 + ((e1 / (e1 - e2)) * (guess2 - guess1))
-        guess1 = guess2
-        guess2 = guess3
-      
-    Ts2 = guess2
-    Qwall = Qcond2
-    print("Heat loss from wall = " + str(Qwall) + " W for Ts2 = " + str(Ts2))
+
+
+# FIXME the general solution produces a different result to the manual solution; resolve this
+def rWall(chamberRadius, hCyl, conductivities, thicknesses):
+
+    """General Solution"""
+    rWall = 0
+
+    for i in range(len(conductivities)):
+
+        if(i == 0):
+            innerRadius = chamberRadius
+        else:
+            innerRadius = chamberRadius + sum(thicknesses[:i])
+        
+        outerRadius = innerRadius + thicknesses[i]
+
+        rWall += log(outerRadius / innerRadius) / (2 * pi * hCyl * conductivities[i])
+
+    return rWall
+
 
 
 def calcViscosity(Tfilm):
@@ -71,6 +93,10 @@ def calcViscosity(Tfilm):
 def calcDensity(pressure, gasConstant, temp):
     return pressure / (gasConstant * temp)
 
+
+
+def calcGrashof(Tsurf, Tfluid, length, density, viscosity):
+    return (density**2) * 9.81 * (2 / (Tsurf + Tfluid)) * abs(Tsurf - Tfluid) * (length**3) / (viscosity**2)
 
 
 def calcConductivity(Tfilm, density):
@@ -116,7 +142,7 @@ def calcConductivity(Tfilm, density):
 
 
 
-def rConv(diameter, L, Tsurf, Tair, Cp, area, pressure, gasConstant):
+def rConvCyl(diameter, L, Tsurf, Tair, Cp, area, pressure, gasConstant):
 
     Tfilm = (Tsurf + Tair) / 2
     viscosity = calcViscosity(Tfilm)
@@ -124,7 +150,7 @@ def rConv(diameter, L, Tsurf, Tair, Cp, area, pressure, gasConstant):
     k = calcConductivity(Tfilm, density)
 
     prandtl = Cp * viscosity / k
-    grashof = (density**2) * 9.81 * (2 / (Tsurf + Tair)) * abs(Tsurf - Tair) * (L**3) / (viscosity**2)
+    grashof = calcGrashof(Tsurf, Tair, L, density, viscosity)
     raleigh = grashof * prandtl
 
     # can we treat the cylinder as a vertical flat plate?
@@ -138,11 +164,178 @@ def rConv(diameter, L, Tsurf, Tair, Cp, area, pressure, gasConstant):
 
 
 
-def rWall(outerRadius, innerRadius, L, kCyl):
+# use shooting method to find the value of Ts2 that satisfies conservation of energy
+def wallHeatLoss(innerWallTemp, outerRadius, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant):
+    guess1 = Tambient + 100
+    guess2 = innerWallTemp - 100
 
-    rWall = log(outerRadius/innerRadius) / (2 * pi * L* kCyl)
-    return rWall
+    tol = 1e-4
+    e1 = 2 * tol
+    Qcond2 = 0
 
+    outerArea = 2 * pi * outerRadius * hCyl
+
+    while(abs(e1) > tol):
+
+        # wall heat loss
+        Qcond1 = (innerWallTemp - guess1) / rCyl
+        Qcond2 = (innerWallTemp - guess2) / rCyl
+
+        # convection heat loss
+        Qconv1 = (guess1 - Tambient) / rConvCyl(2 * outerRadius, hCyl, guess1, Tambient, Cp, outerArea, pAmbient, gasConstant)
+        Qconv2 = (guess2 - Tambient) / rConvCyl(2 * outerRadius, hCyl, guess2, Tambient, Cp, outerArea, pAmbient, gasConstant)
+
+        e1 = Qcond1 - Qconv1
+        e2 = Qcond2 - Qconv2
+
+        if(e1 == e2 and abs(e2) < tol):
+            break
+
+        guess3 = guess1 + ((e1 / (e1 - e2)) * (guess2 - guess1))
+        guess1 = guess2
+        guess2 = guess3
+    
+    return guess2, Qcond2
+
+
+
+def rConvPlane(hotSide, Tsurface, Tfluid, L, Cp, gasConstant, pressure, area):
+
+    Tfilm = (Tsurface + Tfluid) / 2
+    density = calcDensity(pressure, gasConstant, Tfilm)
+    viscosity = calcViscosity(Tfilm)
+    filmConductivity = calcConductivity(Tfilm, density)
+
+    prandtl = Cp * viscosity / filmConductivity
+    grashof = calcGrashof(Tsurface, Tfluid, L, density, viscosity)
+    raleigh = grashof * prandtl
+    nusselt = 1
+
+    if((hotSide == "top" and Tsurface > Tfluid) or (hotSide == "bottom" and Tsurface < Tfluid)):
+        
+        if(raleigh >= 1e4 and raleigh <= 1e7):
+            nusselt = 0.54 * (raleigh**0.25)
+
+        elif(raleigh > 1e7 and raleigh <= 1e11):
+            nusselt = 0.15 * (raleigh**(1/3))
+        
+    elif(raleigh >= 1e5 and raleigh <= 1e11):
+        nusselt = 0.27 * (raleigh**0.25)
+
+    elif(raleigh > 5e3 and raleigh < 1e5):
+        nusselt = 1.611 * (raleigh**0.145)
+
+    hMean = nusselt * filmConductivity / L
+    return 1 / (hMean * area)
+
+
+
+
+def planarWallHeatLoss(area, perimiter, thickness, Tambient, Cp, gasConstant, pAmbient, kWall, side):
+
+    L = area / perimiter
+    rCond = thickness / (kWall * area)
+
+    guess1 = Tambient + 50
+    guess2 = Tambient * 2    
+
+    tol = 1e-4
+    e1 = 2 * tol
+    Qcond2 = 0
+
+    kRelaxation = 0.1
+
+    while(abs(e1) > tol):
+
+        Qconv1 = (guess1 - Tambient) / rConvPlane(side, guess1, Tambient, L, Cp, gasConstant, pAmbient, area)
+        Qconv2 = (guess2 - Tambient) / rConvPlane(side, guess2, Tambient, L, Cp, gasConstant, pAmbient, area)
+
+        Qcond1 = (guess1 - Tambient) / rCond
+        Qcond2 = (guess2 - Tambient) / rCond
+
+        e1 = Qcond1 - Qconv1
+        e2 = Qcond2 - Qconv2
+
+        if(e1 == e2 and abs(e2) < tol):
+            break
+
+        guess3 = guess1 + ((e1 / (e1 - e2)) * (guess2 - guess1))
+        guess1 = guess1 + (kRelaxation * (guess2 - guess1))
+        guess2 = guess2 + (kRelaxation * (guess3 - guess2))
+
+    return guess2, Qcond2
+
+
+
+# TODO: this needs to be a surface plot against both brick and rockwool thicknesses
+def QvsWallThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, conductivities, Tambient, pAmbient, Cp, gasConstant):
+
+    brickThickness = np.linspace(0.001, 1, 100)
+    rockWoolThickness = np.linspace(0.001, 1, 100)
+    heatLoss = np.zeros((brickThickness.size, rockWoolThickness.size))
+    TouterWall = np.zeros((brickThickness.size, rockWoolThickness.size))
+
+    for i in range(brickThickness.size):
+        for j in range(rockWoolThickness.size):
+
+            rCyl = rWall(chamberRadius, hCyl, conductivities, [brickThickness[i], rockWoolThickness[j], casingThickness])
+            heatLoss[i, j] = wallHeatLoss(innerWallTemp, chamberRadius + brickThickness[i] + rockWoolThickness[j] + casingThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)[1]
+        
+    fig = plt.figure(0)    
+    # surface plot against both wall thicknesses
+
+    brickThickness, rockWoolThickness = np.meshgrid(brickThickness, rockWoolThickness)
+
+    ax = fig.add_subplot(111, projection='3d')
+    ax.plot_surface(brickThickness * 1000, rockWoolThickness * 1000, heatLoss, cmap=cm.inferno)
+    ax.set_xlabel("brick thickness (mm)")
+    ax.set_ylabel("rockwool thickness (mm)")
+    ax.set_zlabel("heat loss (W)")
+
+
+
+def QvsRockWoolThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, conductivities, Tambient, pAmbient, Cp, gasConstant):
+
+    brickThickness = 0.076
+    rockWoolThickness = np.linspace(0.001, 1, 100)
+    heatLoss = np.empty(rockWoolThickness.size)
+
+    for i in range(0, rockWoolThickness.size):
+
+        rCyl = rWall(chamberRadius, hCyl, conductivities, [brickThickness, rockWoolThickness[i], casingThickness])
+        heatLoss[i] = wallHeatLoss(innerWallTemp, chamberRadius + brickThickness + rockWoolThickness[i] + casingThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)[1]
+
+    plt.figure(3)
+    plt.plot(rockWoolThickness * 1000, heatLoss, '-')
+    plt.plot([0, 1000], [200, 200], '--r')
+    plt.plot([0, 1000], [150, 150], '--g')
+    plt.xlabel("rockwool thickness (mm)")
+    plt.ylabel("heat loss (W)")
+
+
+
+def QvsChamberTemp(innerRadius, wallThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant):
+
+    Tchamber = np.linspace(500, 1373, 100)
+    heatLoss = np.zeros(Tchamber.size)
+    outerWallTemp = np.zeros(Tchamber.size)
+
+    for i in range(0, Tchamber.size):
+        outerWallTemp[i], heatLoss[i] = wallHeatLoss(Tchamber[i], innerRadius + wallThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)
+        
+    plt.figure(1)
+    plt.plot(Tchamber - 273.15, outerWallTemp - 273.15, '-')
+    plt.plot([Tchamber[0] - 273, Tchamber[Tchamber.size - 1] - 273], [outerWallTemp[0] - 273, outerWallTemp[heatLoss.size - 1] - 273], '--r')
+    plt.xlabel("chamber temperature (C)")
+    plt.ylabel("outer wall temp (C)")
+    plt.title("Ts3 vs Tchamber")
+
+    plt.figure(2)
+    plt.plot(Tchamber - 273.15, heatLoss, 'b-')
+    plt.xlabel("chamber temperature (C)")
+    plt.ylabel("heat loss (W)")
+    plt.title("Q vs Tchamber")
+    
 
 
 main()

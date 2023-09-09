@@ -156,13 +156,20 @@ It seems that the prediction for inner wall temperature may be too low? Why is t
 
 I'll set $T_{s1}$ to be equal to the chamber temperature of 1100$^{\circ}$C. I believe this is a better (and conservative) approximation as the inside of the furnace will not form a well developed boundary layer as there is no net flow upwards along the chamber wall. This gives an estimated heat loss of 400W through the walls (this makes more sense intuitively).
 
-## Results
+**Modelling the lid and base**
+- Here is a good table of Nusselt correlations for low Raleigh number conditions: [Picture](https://www.researchgate.net/profile/Sn-Sridhara/publication/285992745/figure/tbl1/AS:669300373336093@1536585052777/Correlation-of-Nusselt-number-with-Rayleigh-number.png)
+- Here is a good source explaining the basics of natural convection: [Source](https://www.sfu.ca/~mbahrami/ENSC%20388/Notes/Natural%20Convection.pdf)
 
-some table of results here
+**Adding more wall layers**
+I have modelled the addition of a rockwool overwrap and wood casing to see if we can improve our insulation significantly. 
 
+[MDF properties](https://www.makeitfrom.com/material-properties/Medium-Density-Fiberboard-MDF/)
+[Rockwool properties](https://www.researchgate.net/figure/Relationship-between-thermal-conductivity-and-temperature-of-rock-wool_tbl1_340083368)
+
+adding 200mm of rockwool insulation and then 12mm of MDF as a casing decreases the power loss from 500W to only 200 at 1100$^{\circ}$C
 
 # Heating Element Analysis
 
 ## You guessed it, it's a resistance network (literally)
 
-we will model the wire as one long coil subject to blackbody / grey-body radiation and convection in a large black/grey body chamber (partially accurate assumptions).
+we will model the wire as one long coil subject to blackbody / grey-body radiation and convection in a large black/grey body chamber (partially accurate assumptions). 
