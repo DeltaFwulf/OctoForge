@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f09f0c1319698dc9",
+        "id": "db1f209486181dd2",
         "type": "tabs",
         "children": [
           {
-            "id": "4f6dcd8fbcd0dbf1",
+            "id": "ee3a8ab2334dd04a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -146,14 +146,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4f6dcd8fbcd0dbf1",
+  "active": "ee3a8ab2334dd04a",
   "lastOpenFiles": [
+    "Thermal Analysis/Plots/Q against brick and rockwool thicknesses.svg",
+    "Thermal Analysis/Plots/wall heat loss against thickness(old).png",
+    "Thermal Analysis/Plots/heat loss against both brick thickness and rockwool thickness.png",
+    "Thermal Analysis/Plots/heat loss vs rockwool thickness.png",
+    "Thermal Analysis/Plots/outer wall temperature vs rockwool thickness.png",
     "Thermal Analysis/Outline.md",
     "Budget.md",
+    "Tasks (move into issues).md",
+    "Design Specification.md",
+    "README.md",
     "Thermal Analysis/DevLog.md",
-    "Untitled 1.canvas",
+    "().md",
+    "Power Design/Power Design.md",
+    "Power Design/DevLog.md",
     "Untitled.canvas",
+    "Untitled 1.canvas",
+    "Thermal Analysis/Scripts/CylinderHeatLoss/cylinderHeatLoss.py",
     "Thermal Analysis/Scripts/heatLossSovler.py",
+    "Thermal Analysis/Scripts/CylinderHeatLoss",
+    "Thermal Analysis/Scripts",
+    "Thermal Analysis/Plots/wall heat loss against thickness.png",
+    "Thermal Analysis/Plots",
+    "Controller Design/User Interface.md",
+    "Controller Design",
+    "Furnace Design Specification.md",
+    "User Interface.md",
+    "Thermal Analysis/Task Outline.md",
+    "Tasks.md",
     "Thermal Analysis/Scripts/wallHeatLoss.py"
   ]
 }

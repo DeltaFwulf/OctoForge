@@ -1,16 +1,12 @@
 ## Modelling the chamber as a resistance network
 
-A good method we can use to model the furnace is as a resistance network. Using this we can calculate the heat loss though multiple sides using simple analytical techniques.
-
-as a first attempt, the cylinder may be modelled as a cylinder wall with a lid and a floor surrounded on all sides by ambient air subject to convective heat transfer. 
+A good method we can use to model the furnace is as a resistance network. Using this we can calculate the heat loss though multiple sides using simple analytical techniques. As a first attempt, the cylinder may be modelled as a cylinder wall with a lid and a floor surrounded on all sides by ambient air subject to convective heat transfer. 
 
 Total resistance for a single wall, $R_{wall}$, is equal to the sum of the inline resistances between the chamber air and the ambient air.
 
 ## Parameterising air properties
 
 To save manually looking up values in dry air tables, I will create functions to predict air conductivity and viscosity:
-
-[here](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)is a good source for maths formatting using MathJax
 
 ### Assumptions
 - air is at 101325 Pa
@@ -31,7 +27,7 @@ $T^\ast=\frac{k_bT}{\epsilon}$,
 $\sigma = 3.617 \ast 10^{-10}$ m
 
 ### Thermal conductivity, $\lambda$
-[Source](https://srd.nist.gov/jpcrdreprint/1.555749.pdf)
+Using [this paper](https://srd.nist.gov/jpcrdreprint/1.555749.pdf), I have tied the thermal conductivity of the air to both its temperature and density. This seems to match known values of k through the ranges of temperatures (and pressures) that we require.
 
 $\lambda(\rho,T) = \lambda_0(T) + \lambda_R(\rho)$ W/m$\ast$K
 
@@ -85,13 +81,11 @@ We can predict floor and lid performances similarly, assuming the furnace is air
 
 To get better results, we will need to run a thermal simulation of the frame after initial models have been produced in software such as openFoam.
 
-The results produced here can also be used to inform the convection-radiation analysis of the heating elements
-
 ### Setting boundary conditions 
 
 How hot can the outer wall get if not shrouded? [Possible Source](https://ntrs.nasa.gov/api/citations/20100020960/downloads/20100020960.pdf)
 
-For testing, I'll use 44$^{\circ}$C, but I'll figure out the $k{\rho}c$ of fire bricks later on
+For testing, I'll use 44$^{\circ}$C, but I'll figure out the $k{\rho}c$ of ~~fire bricks~~ later on
 
 **20/08/2023**
 
@@ -126,7 +120,7 @@ Another seemingly big issue is that if Ts2 is assumed constant when varying $r_{
 
 **Definition of Shooting Method** (I can't remember its real name so I just rederive it every time I need it)
 
-**Assumption:** there is a positive correlation between guesses and cost function output. 
+**Assumption:** there is a monotonic correlation between guesses and cost function output. 
 
 1. make two initial guesses, $g_1$, and $g_2$.
 2. calculate the cost function output for these errors i.e. the difference in heat output to target (make sure it is positively correlated with guess magnitude or you may have a problem)
@@ -156,17 +150,21 @@ It seems that the prediction for inner wall temperature may be too low? Why is t
 
 I'll set $T_{s1}$ to be equal to the chamber temperature of 1100$^{\circ}$C. I believe this is a better (and conservative) approximation as the inside of the furnace will not form a well developed boundary layer as there is no net flow upwards along the chamber wall. This gives an estimated heat loss of 400W through the walls (this makes more sense intuitively).
 
-**Modelling the lid and base**
-- Here is a good table of Nusselt correlations for low Raleigh number conditions: [Picture](https://www.researchgate.net/profile/Sn-Sridhara/publication/285992745/figure/tbl1/AS:669300373336093@1536585052777/Correlation-of-Nusselt-number-with-Rayleigh-number.png)
-- Here is a good source explaining the basics of natural convection: [Source](https://www.sfu.ca/~mbahrami/ENSC%20388/Notes/Natural%20Convection.pdf)
+**08/09/2023 - 09/09/2023**
+Today, I implemented a generalised multilayer wall solver for the cylinder. This allows us to experiment with different materials of different thicknesses more easily. Additionally, I tweaked the chamber dimensions to better fit our expected crucible dimensions of **60mm OD and 145mm chamber height**. The lid and base calculations were also tweaked to be both closer to reality as well as more conservative: I extended the radius of both to that of the furnace outer radius as wall loss calculations previously ignored heat lost through the *top and bottom* of the walls. I initially had stability issues with my solver, but adding a relaxation factor of 0.1 solved this issue; there is a discontinuity between different correlations that was throwing off results. To alleviate this in the future, I plan to blend linearly over a short range between regimes.
 
-**Adding more wall layers**
-I have modelled the addition of a rockwool overwrap and wood casing to see if we can improve our insulation significantly. 
+**Modelling the lid and base**
+
+Under some conditions, the lid or base are too cold for standard correlations to produce accurate results. To remedy this, I have found a lower range Nusselt correlation [here](https://www.researchgate.net/profile/Sn-Sridhara/publication/285992745/figure/tbl1/AS:669300373336093@1536585052777/Correlation-of-Nusselt-number-with-Rayleigh-number.png). To the reader of this log, [here](https://www.sfu.ca/~mbahrami/ENSC%20388/Notes/Natural%20Convection.pdf) is a basic explanation for natural convection. 
+
+**Multilayer walls**
+I have modelled the addition of a rockwool overwrap and MDF casing to see if we can improve our insulation significantly. 
 
 [MDF properties](https://www.makeitfrom.com/material-properties/Medium-Density-Fiberboard-MDF/)
 [Rockwool properties](https://www.researchgate.net/figure/Relationship-between-thermal-conductivity-and-temperature-of-rock-wool_tbl1_340083368)
 
-adding 200mm of rockwool insulation and then 12mm of MDF as a casing decreases the power loss from 500W to only 200 at 1100$^{\circ}$C
+**Effects of adding rockwool insulation**
+I found that by adding only 80mm of rockwool around the firebricks and 12mm of MDF as an outer casing, we can reduce our power use from 220W to only 150W at a chamber temperature of 1100℃. This is definitely worth including, as rockwool is easy to form and fairly inexpensive. It will also protect the fragile firebricks from being damaged by collisions with tools or when being handled/moved.
 
 # Heating Element Analysis
 

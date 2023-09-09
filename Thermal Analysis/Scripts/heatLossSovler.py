@@ -1,7 +1,8 @@
 # given innerWallTemp, wallThickness, Tambient, find heat loss through the furnace walls
 # SI units unless specified
 
-# TODO instead of just printing "nusselt calcualation may be less accurate", tag the result with an approval or rejection
+# TODO instead of just printing "nusselt calcualation may be less accurate", tag the result with an approval or rejection of final result
+# TODO we could linearly blend between different Nusselt correlations to remove discontinuities
 
 from math import sqrt, pi, exp, log
 import numpy as np
@@ -21,14 +22,13 @@ def main():
     lidThickness = 0.076
     baseThickness = 0.076
 
-    """Wall properties"""
     hCyl = 0.145
     kBrick = 0.4
     kRockWool = 0.2
     kWood = 0.3
 
     brickThickness = 0.076
-    rockWoolThickness = 0.200
+    rockWoolThickness = 0.2
     casingThickness = 0.012
 
     conductivities = [kBrick, kRockWool, kWood]
@@ -299,11 +299,12 @@ def QvsRockWoolThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, co
     brickThickness = 0.076
     rockWoolThickness = np.linspace(0.001, 1, 100)
     heatLoss = np.empty(rockWoolThickness.size)
+    outerWallTemp = np.empty(rockWoolThickness.size)
 
     for i in range(0, rockWoolThickness.size):
 
         rCyl = rWall(chamberRadius, hCyl, conductivities, [brickThickness, rockWoolThickness[i], casingThickness])
-        heatLoss[i] = wallHeatLoss(innerWallTemp, chamberRadius + brickThickness + rockWoolThickness[i] + casingThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)[1]
+        outerWallTemp[i], heatLoss[i] = wallHeatLoss(innerWallTemp, chamberRadius + brickThickness + rockWoolThickness[i] + casingThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)
 
     plt.figure(3)
     plt.plot(rockWoolThickness * 1000, heatLoss, '-')
@@ -311,6 +312,11 @@ def QvsRockWoolThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, co
     plt.plot([0, 1000], [150, 150], '--g')
     plt.xlabel("rockwool thickness (mm)")
     plt.ylabel("heat loss (W)")
+
+    plt.figure(4)
+    plt.plot(rockWoolThickness * 1000, outerWallTemp - 273, '-r')
+    plt.xlabel("rockwool thickness (mm)")
+    plt.ylabel("outer wall temperature (C)")
 
 
 
