@@ -8,3 +8,4 @@ To create a simple heat-transfer model of the furnace chamber to permit minimum 
 	- attempt to identify a smallest 'good enough' furnace
 	- plot performance of a seemingly good furnace against environmental conditions
 - model the wire using a resistance network (simplified radiation + convection in air with an efficiency factor) to calculate wire temperature vs power, chamber temperature
+

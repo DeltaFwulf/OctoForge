@@ -52,7 +52,7 @@ def main():
 
     QvsWallThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, conductivities, Tambient, pAmbient, Cp, gasConstant)
     QvsRockWoolThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, conductivities, Tambient, pAmbient, Cp, gasConstant)
-    #QvsChamberTemp(chamberRadius, wallThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)
+    QvsChamberTemp(chamberRadius, thicknesses, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)
     plt.show()
 
 
@@ -320,14 +320,14 @@ def QvsRockWoolThickness(innerWallTemp, chamberRadius, hCyl, casingThickness, co
 
 
 
-def QvsChamberTemp(innerRadius, wallThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant):
+def QvsChamberTemp(chamberRadius, thicknesses, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant):
 
     Tchamber = np.linspace(500, 1373, 100)
     heatLoss = np.zeros(Tchamber.size)
     outerWallTemp = np.zeros(Tchamber.size)
 
     for i in range(0, Tchamber.size):
-        outerWallTemp[i], heatLoss[i] = wallHeatLoss(Tchamber[i], innerRadius + wallThickness, hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)
+        outerWallTemp[i], heatLoss[i] = wallHeatLoss(Tchamber[i], chamberRadius + thicknesses[0] + thicknesses[1] + thicknesses[2], hCyl, rCyl, Tambient, pAmbient, Cp, gasConstant)
         
     plt.figure(1)
     plt.plot(Tchamber - 273.15, outerWallTemp - 273.15, '-')
@@ -337,7 +337,7 @@ def QvsChamberTemp(innerRadius, wallThickness, hCyl, rCyl, Tambient, pAmbient, C
     plt.title("Ts3 vs Tchamber")
 
     plt.figure(2)
-    plt.plot(Tchamber - 273.15, heatLoss, 'b-')
+    plt.plot(Tchamber - 273.15, -(heatLoss - heatLoss[heatLoss.size - 1]), 'b-')
     plt.xlabel("chamber temperature (C)")
     plt.ylabel("heat loss (W)")
     plt.title("Q vs Tchamber")
