@@ -1,0 +1,178 @@
+{
+  "main": {
+    "id": "d9afbfaeab64eff9",
+    "type": "split",
+    "children": [
+      {
+        "id": "6aabc4cd5b25f510",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed18758e8010b05f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "aaae6ab042d0a405",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Power Design/DevLog.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7e2699081cdc14e1",
+    "type": "split",
+    "children": [
+      {
+        "id": "e7f57b391179799d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "120caf5654a30553",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "38780199cc8d6504",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a40f12e3ff11a6e0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e177c11a1f9855d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "9950506760eee09a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88055259bdbdee1d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Power Design/DevLog.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c41c711fe9ad7515",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Power Design/DevLog.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "86ea42ed47c9494b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ee6ee54767eb562c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Power Design/DevLog.md"
+              }
+            }
+          },
+          {
+            "id": "4e83be2862ca70fc",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "aaae6ab042d0a405",
+  "lastOpenFiles": [
+    "Power Design/Resources/MOSFET_OCP_V2.md",
+    "Power Design/DevLog.md",
+    "Power Design/Resources/MOSFET_OCP_V2.txt",
+    "Power Design/Resources/MOSFET_OCP.md",
+    "Power Design/Power Design.md",
+    "Power Design/Resources/MOSFET_OCP.txt",
+    "Power Design/Resources"
+  ]
+}
