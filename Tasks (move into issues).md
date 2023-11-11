@@ -9,5 +9,3 @@
 7. design tooling for manufacturing furnace
 8. meet up in garage and start manufacturing components
 
-
-1. 
