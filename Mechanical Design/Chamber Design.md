@@ -1,7 +1,7 @@
 
 # Objectives
 - minimise machining operations
-- fit the crucible well(?)
+- minimise chamber volume
 - achieve an efficiency at least as high as a cylinder of min thickness
 - easy to repair / replace
 - portable
