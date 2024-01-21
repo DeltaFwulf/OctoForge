@@ -1,39 +1,72 @@
 {
   "main": {
-    "id": "a5f8f8fac957e31f",
+    "id": "df31dda90797d174",
     "type": "split",
     "children": [
       {
-        "id": "17d65e0d1cabfa85",
+        "id": "995fb3e5e415f518",
         "type": "tabs",
         "children": [
           {
-            "id": "e31e7644141eb203",
+            "id": "90ecbd88cfd81626",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "c0da75fbf9362df5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Power Design/Power Design.md",
+                "file": "Mechanical Design/Learning to Use FreeCAD Effectively.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "924e640e132e59f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mechanical Design/Frame Design.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "00b92d5605817eee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mechanical Design/Cooling Electronics.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "e4e2a4d8c532cc87",
+    "id": "3327c40e404ba581",
     "type": "split",
     "children": [
       {
-        "id": "652e3441d0fff8a4",
+        "id": "9593359a7b3d9ba6",
         "type": "tabs",
         "children": [
           {
-            "id": "81ff0ae649352693",
+            "id": "f2bdf743d9388531",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +76,7 @@
             }
           },
           {
-            "id": "10b83015e08678ff",
+            "id": "8f713ce720f9fad1",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +91,7 @@
             }
           },
           {
-            "id": "21b12935f12b4cc1",
+            "id": "d46cb587b570bb44",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,20 +105,20 @@
     "width": 300
   },
   "right": {
-    "id": "4d24a7cdf7d6798d",
+    "id": "d98bb1793fdbd2af",
     "type": "split",
     "children": [
       {
-        "id": "c059a28afbf9267f",
+        "id": "8e5a53db2c14e4e7",
         "type": "tabs",
         "children": [
           {
-            "id": "d815d11efec5d582",
+            "id": "562646fd036b836a",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Power Design/Power Design.md",
+                "file": "Mechanical Design/Cooling Electronics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +130,19 @@
             }
           },
           {
-            "id": "035180b6a537b411",
+            "id": "0a7f420013fafb3b",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Power Design/Power Design.md",
+                "file": "Mechanical Design/Cooling Electronics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "1427495a9ee8e84a",
+            "id": "bd43e1ce3a1c6a57",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,12 +153,25 @@
             }
           },
           {
-            "id": "769066fb96c304cb",
+            "id": "8311d601dbf1968f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          },
+          {
+            "id": "924664d22c399976",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
                 "file": "Power Design/Power Design.md"
+
               }
             }
           }
@@ -146,18 +192,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "81ff0ae649352693",
+  "active": "00b92d5605817eee",
   "lastOpenFiles": [
-    "Power Design/PowerDelivery/fp-B3EF.tmp",
-    "Power Design/PowerDelivery/PowerDelivery-backups/PowerDelivery-2023-10-08_011424.zip",
-    "Power Design/PowerDelivery/PowerDelivery-backups/PowerDelivery-2023-10-08_010410.zip",
-    "Power Design/PowerDelivery/PowerDelivery-backups/PowerDelivery-2023-10-08_005400.zip",
-    "Power Design/PowerDelivery/_autosave-PowerDelivery.kicad_pcb",
-    "Power Design/PowerDelivery/PowerDelivery-backups/PowerDelivery-2023-10-08_003557.zip",
-    "Power Design/PowerDelivery/fp-667A.tmp",
-    "Power Design/PowerDelivery/PowerDelivery-backups/PowerDelivery-2023-10-08_001219.zip",
-    "Power Design/PowerDelivery/fp-5940.tmp",
-    "Power Design/PowerDelivery/PowerDelivery-backups/PowerDelivery-2023-10-07_235842.zip",
-    "Power Design/PowerDelivery/PowerDelivery-backups/PowerDelivery-2023-10-07_234921.zip"
+    "Mechanical Design/Chamber Design.md",
+    "Mechanical Design/Cooling Electronics.md",
+    "Mechanical Design/Frame Design.md",
+    "Untitled",
+    "Mechanical Design/Learning to Use FreeCAD Effectively.md",
+    "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.FCStd.4036d60f-98df-4877-bfd4-43752eb1f70e",
+    "Mechanical Design/CAD/300 Frame/300_000 frame assembly.20240102-190830.FCBak",
+    "Mechanical Design/CAD/300 Frame/300_000 frame assembly.FCStd.a1674eec-2f31-4174-a81b-c0a23a94df9f",
+    "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.20240102-190833.FCBak",
+    "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.FCStd.d9b64c37-d32e-4612-9f3b-6187f65b3a0f",
+    "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.20240102-190830.FCBak",
+    "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.FCStd.fd12a79c-cb58-4bf6-a8ac-6454e81cb2e0",
+    "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.20240102-190500.FCBak",
+    "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.FCStd.d8ba99d4-cb32-4961-8e96-bb05eeabc5e1",
+    "Useful Design Tools.md",
+    "Mechanical Design/Reference Images/sump example.png",
+    "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png",
+    "Thermal Analysis/DevLog.md"
   ]
 }
