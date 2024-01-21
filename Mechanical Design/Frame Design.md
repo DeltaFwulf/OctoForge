@@ -17,6 +17,9 @@ Fabrication: https://fractory.com/
 ## Coating options
 Powder coating: https://www.cheshirepowdercoating.com/gallery/
 
+## Adjustable Feet
+https://www.vital-parts.co.uk/weight-rated-tilting-adjustable-feet---wamf040-2523-p.asp
 
+[No Mesothelioma hopefully](https://shop.vitcas.com/bio-soluble-fibre-blanket-1200-c-25mm.html)
 
 
