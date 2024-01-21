@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "2EDN752x")(type "KiCad")(uri "${KICAD7_3RD_PARTY}/symbols/2EDN752x.kicad_sym")(options "")(descr ""))
+  (lib (name "IPP016N06NF2SAKMA1")(type "KiCad")(uri "${KICAD7_3RD_PARTY}/symbols/IPP016N06NF2SAKMA1.kicad_sym")(options "")(descr ""))
+)
