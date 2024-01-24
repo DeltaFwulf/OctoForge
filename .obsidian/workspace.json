@@ -45,7 +45,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mechanical Design/Cooling Electronics.md",
+                "file": "Controller Design/DevLog.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mechanical Design/Cooling Electronics.md",
+                "file": "Controller Design/DevLog.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mechanical Design/Cooling Electronics.md",
+                "file": "Controller Design/DevLog.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,8 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Power Design/Power Design.md"
-
+                "file": "Controller Design/DevLog.md"
               }
             }
           }
@@ -194,8 +193,14 @@
   },
   "active": "00b92d5605817eee",
   "lastOpenFiles": [
-    "Mechanical Design/Chamber Design.md",
+    "Controller Design/Controller/#auto_saved_files#",
+    "Controller Design/Controller/_autosave-Controller.kicad_sch",
+    "Power Design/DevLog.md",
+    "Controller Design/DevLog.md",
+    "Controller Design/User Interface.md",
+    "Power Design/Power Design.md",
     "Mechanical Design/Cooling Electronics.md",
+    "Mechanical Design/Chamber Design.md",
     "Mechanical Design/Frame Design.md",
     "Untitled",
     "Mechanical Design/Learning to Use FreeCAD Effectively.md",
@@ -207,7 +212,6 @@
     "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.20240102-190830.FCBak",
     "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.FCStd.fd12a79c-cb58-4bf6-a8ac-6454e81cb2e0",
     "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.20240102-190500.FCBak",
-    "Mechanical Design/CAD/000 Furnace Assembly/000_000 furnace.FCStd.d8ba99d4-cb32-4961-8e96-bb05eeabc5e1",
     "Useful Design Tools.md",
     "Mechanical Design/Reference Images/sump example.png",
     "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png",
