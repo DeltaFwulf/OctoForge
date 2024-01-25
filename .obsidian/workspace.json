@@ -50,9 +50,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "4eab912c443caa15",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Controller Design/DevLog.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -191,7 +203,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "00b92d5605817eee",
+  "active": "4eab912c443caa15",
   "lastOpenFiles": [
     "Controller Design/Controller/#auto_saved_files#",
     "Controller Design/Controller/_autosave-Controller.kicad_sch",
