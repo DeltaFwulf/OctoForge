@@ -13,24 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mechanical Design/Learning to Use FreeCAD Effectively.md",
+                "file": "Thermal Analysis/DevLog.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "f354ef2bedf70cff",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png",
+                "file": "Thermal Analysis/DevLog.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png",
+                "file": "Thermal Analysis/DevLog.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png"
+                "file": "Thermal Analysis/DevLog.md"
               }
             }
           }
@@ -157,14 +146,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e70874b0ea905b18",
+  "active": "39aff6ca12385dee",
   "lastOpenFiles": [
+    "Mechanical Design/Useful Design Tools.md",
+    "Mechanical Design/Learning to Use FreeCAD Effectively.md",
+    "Mechanical Design/Cooling Electronics.md",
     "Mechanical Design/Reference Images/sump example.png",
     "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png",
     "Mechanical Design/Chamber Design.md",
-    "Mechanical Design/Cooling Electronics.md",
-    "Mechanical Design/Learning to Use FreeCAD Effectively.md",
-    "Mechanical Design/Useful Design Tools.md",
     "Fasteners.md",
     "Mechanical Design/lu200924zs3m.tmp",
     "Mechanical Design/lu200924zs3j.tmp",
