@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Thermal Analysis/DevLog.md",
+                "file": "Mechanical Design/Chamber Design.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0b4ca260279e349a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mechanical Design/Chamber Design.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Thermal Analysis/DevLog.md",
+                "file": "Mechanical Design/Chamber Design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Thermal Analysis/DevLog.md",
+                "file": "Mechanical Design/Chamber Design.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Thermal Analysis/DevLog.md"
+                "file": "Mechanical Design/Chamber Design.md"
               }
             }
           }
@@ -146,25 +159,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "39aff6ca12385dee",
+  "active": "0b4ca260279e349a",
   "lastOpenFiles": [
-    "Mechanical Design/Useful Design Tools.md",
-    "Mechanical Design/Learning to Use FreeCAD Effectively.md",
+    "Mechanical Design/CAD/300 Frame/300_000 frame assembly.20240309-212123.FCBak",
+    "Mechanical Design/CAD/300 Frame/300_000 frame assembly.FCStd.8f93a1ad-65b3-4c2f-aea4-042b33a6918f",
+    "Mechanical Design/CAD/300 Frame/300_000 frame assembly.20240309-212119.FCBak",
+    "Mechanical Design/CAD/300 Frame/300_000 frame assembly.FCStd.8e9b846b-9525-4a26-b81d-1c03ea77ccd2",
+    "Mechanical Design/CAD/300 Frame/300_000 frame assembly.20240215-225342.FCBak",
+    "Mechanical Design/CAD/300 Frame/300_000 frame assembly.FCStd.987c56ea-456c-4dc3-b8ab-1d2e42f9bb72",
+    "Mechanical Design/CAD/300 Frame/STEP Exports/300_012.step",
+    "Mechanical Design/CAD/300 Frame/STEP Exports/300_015.step",
+    "Mechanical Design/CAD/300 Frame/STEP Exports/300_014.step",
+    "Mechanical Design/CAD/300 Frame/STEP Exports/300_007.step",
+    "Mechanical Design/CAD/300 Frame/300_007 ring elbow.20240206-222442.FCBak",
     "Mechanical Design/Cooling Electronics.md",
+    "Mechanical Design/Learning to Use FreeCAD Effectively.md",
+    "Mechanical Design/Useful Design Tools.md",
+    "Mechanical Design/FreeCAD required add-ons.md",
+    "Mechanical Design/Chamber Design.md",
+    "Thermal Analysis/DevLog.md",
     "Mechanical Design/Reference Images/sump example.png",
     "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png",
-    "Mechanical Design/Chamber Design.md",
     "Fasteners.md",
-    "Mechanical Design/lu200924zs3m.tmp",
-    "Mechanical Design/lu200924zs3j.tmp",
-    "Mechanical Design/lu200924zs3g.tmp",
-    "Mechanical Design/lu200924zs3d.tmp",
-    "Mechanical Design/lu200924zs3a.tmp",
-    "Mechanical Design/lu200924zs37.tmp",
-    "Mechanical Design/lu200924zs34.tmp",
-    "Mechanical Design/lu200924zs31.tmp",
-    "Mechanical Design/lu200924zs2y.tmp",
-    "Mechanical Design/lu200924zs2v.tmp",
     "README.md",
     "Frame Design.md",
     "Tasks (move into issues).md"
