@@ -129,6 +129,6 @@ With the majority of the resistors in use on the circuit being used for measurem
 
 <https://uk.rs-online.com/web/p/trimmer-potentiometers/5219647>
 
-#### Screw Terminal - Weidmuller PM 5.08
+#### Screw Terminal - Weidmuller PM 5.08/90
 
 <https://uk.rs-online.com/web/p/pcb-terminal-blocks/4258720>
