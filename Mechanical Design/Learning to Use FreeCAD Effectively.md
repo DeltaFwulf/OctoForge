@@ -26,6 +26,8 @@ There seem to be two main addons capable of handling assemblies: A2Plus and Asse
 
 For now, I think I'll stick with Assembly 4 as it appears to scale better than A2Plus. With large assemblies coming down the line in future projects, it makes more sense to prepare by learning best practices now.
 
+N.B. it is quite convenient to create simpler assemblies (2 or 3 minor components) just using the Part object with several bodies contained within.
+
 -------------------------------------------------------------------------------
 ## Creating part variants
 
@@ -44,3 +46,9 @@ These are quite useful for instancing objects, however it doesn't replace base g
 ## Spreadsheets & Master Documents
 
 note to self: you can use a single spreadsheet in a single master document over multiple directories. I have been working with a single master in each directory, which works until a dimension is shared between subassemblies.
+
+-------------------------------------------------------------------------------
+### Creating a Shell
+
+This is called Part Thickness and can be found in the *Part* workbench.
+[guide](https://forum.freecad.org/viewtopic.php?f=3&t=3766&p=29741&hilit=enclosure#p29547)
