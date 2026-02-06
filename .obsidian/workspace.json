@@ -11,11 +11,30 @@
             "id": "97399873c6f67dd8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Tasks (move into issues).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tasks (move into issues)"
+            }
+          },
+          {
+            "id": "8770cf0b7b975ddf",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.6"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -34,8 +53,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -50,7 +72,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -58,11 +82,12 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -82,6 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Tasks (move into issues).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,7 +115,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Tasks (move into issues)"
             }
           },
           {
@@ -98,9 +126,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Tasks (move into issues).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Tasks (move into issues)"
             }
           },
           {
@@ -110,8 +141,12 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -119,7 +154,14 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Tasks (move into issues).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Tasks (move into issues)"
             }
           }
         ]
@@ -131,6 +173,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -139,9 +182,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9accb9bd5aa55d3c",
+  "active": "8770cf0b7b975ddf",
   "lastOpenFiles": [
+    "Untitled.base",
+    "Untitled 1.base",
     "Mechanical Design/Chamber Design.md",
+    "Mechanical Design/Useful Design Tools.md",
+    "Mechanical Design/Learning to Use FreeCAD Effectively.md",
+    "Mechanical Design/FreeCAD required add-ons.md",
+    "Mechanical Design/Cooling Electronics.md",
     "Mechanical Design/CAD/300 Frame/300_000 frame assembly.20240309-212123.FCBak",
     "Mechanical Design/CAD/300 Frame/300_000 frame assembly.FCStd.8f93a1ad-65b3-4c2f-aea4-042b33a6918f",
     "Mechanical Design/CAD/300 Frame/300_000 frame assembly.20240309-212119.FCBak",
@@ -150,12 +199,6 @@
     "Mechanical Design/CAD/300 Frame/300_000 frame assembly.FCStd.987c56ea-456c-4dc3-b8ab-1d2e42f9bb72",
     "Mechanical Design/CAD/300 Frame/STEP Exports/300_012.step",
     "Mechanical Design/CAD/300 Frame/STEP Exports/300_015.step",
-    "Mechanical Design/CAD/300 Frame/STEP Exports/300_014.step",
-    "Mechanical Design/CAD/300 Frame/STEP Exports/300_007.step",
-    "Mechanical Design/Cooling Electronics.md",
-    "Mechanical Design/Learning to Use FreeCAD Effectively.md",
-    "Mechanical Design/Useful Design Tools.md",
-    "Mechanical Design/FreeCAD required add-ons.md",
     "Thermal Analysis/DevLog.md",
     "Mechanical Design/Reference Images/sump example.png",
     "Mechanical Design/Reference Images/frame snapshot 24_12_2023.png",

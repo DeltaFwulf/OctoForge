@@ -12,7 +12,6 @@
 ## Manufacturability Improvements
 
 - increase bolt spacing on ring elbows (too close to bend)
-- 
 
 
 ## Cost-saving measures

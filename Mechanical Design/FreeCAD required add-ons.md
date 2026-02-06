@@ -1,3 +1,2 @@
-- Sheet Metal
-- Assembly4
-- Fasteners
+Sheet Metal
+Fasteners
