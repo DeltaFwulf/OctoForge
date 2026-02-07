@@ -1,0 +1,224 @@
+{
+  "main": {
+    "id": "9a65b7b4b7794c13",
+    "type": "split",
+    "children": [
+      {
+        "id": "64025bca0d5ce083",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e61aef592cb3f53d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Mechanical/Plots/wall heat loss against thickness(old).png"
+              },
+              "icon": "lucide-image",
+              "title": "wall heat loss against thickness(old)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8a402ab3f2012916",
+    "type": "split",
+    "children": [
+      {
+        "id": "2a178adadade7e5c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0131f824fdae59b9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d9a4f0b20a0992a0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "bb6f3b9784249f7c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9b9b55398f977a48",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c9bac9d2fef862a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "238ca0bdbc3b4bf0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Thermal Analysis/Plots/heat loss against both brick thickness and rockwool thickness.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for heat loss against both brick thickness and rockwool thickness"
+            }
+          },
+          {
+            "id": "c6a948ebfe91466b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Thermal Analysis/Plots/heat loss against both brick thickness and rockwool thickness.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from heat loss against both brick thickness and rockwool thickness"
+            }
+          },
+          {
+            "id": "e338b68521744d42",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "bd2a1687ba8ab8ba",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "5c8c76c90b6a09c4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Thermal Analysis/Plots/heat loss against both brick thickness and rockwool thickness.png",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of heat loss against both brick thickness and rockwool thickness"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "0131f824fdae59b9",
+  "lastOpenFiles": [
+    "Mechanical/Plots/Q against brick and rockwool thicknesses.svg",
+    "Mechanical/Plots/outer wall temperature vs rockwool thickness.png",
+    "Mechanical/Plots/heat loss vs rockwool thickness.png",
+    "Mechanical/Plots/heat loss against both brick thickness and rockwool thickness.png",
+    "Mechanical/DevLog.md",
+    "Mechanical/Frame Design.md",
+    "Mechanical/Outline.md",
+    "Design Specification.md",
+    "Mechanical/Plots/wall heat loss against thickness(old).png",
+    "Mechanical/Plots",
+    "Mechanical/Learning to Use FreeCAD Effectively.md",
+    "Tasks (move into issues).md",
+    "Useful Design Tools.md",
+    "Cooling Electronics.md",
+    "Budget.md",
+    "Mechanical",
+    "README.md",
+    "Untitled 1.base",
+    "Untitled.base",
+    "Example Design/Scripts/Script 0/output 0.md",
+    "Example Design/Scripts/Script 0/This is a script.py.md",
+    "Thermal Analysis/Plots/heat loss against both brick thickness and rockwool thickness.png",
+    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-LBRAC-AA.20260206-182423.FCBak",
+    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-LBRAC-AA.FCStd.d22f513a-8738-4e5a-9724-a255204c9358",
+    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.20260206-183001.FCBak",
+    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.FCStd.a5b768bc-79da-4fee-aa8e-6d854e7c3e71",
+    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.20260206-182858.FCBak",
+    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.FCStd.c5378205-ce21-4050-a831-3aebc8117e6b",
+    "Thermal Analysis/Plots/heat loss vs rockwool thickness.png",
+    "Thermal Analysis/Plots/Q against brick and rockwool thicknesses.svg",
+    "Thermal Analysis/Plots/outer wall temperature vs rockwool thickness.png",
+    "Thermal Analysis/Plots/wall heat loss against thickness(old).png",
+    "Mechanical Design/Useful Design Tools.md",
+    "Mechanical Design/Learning to Use FreeCAD Effectively.md",
+    "Mechanical Design/Frame Design.md",
+    "Mechanical Design/FreeCAD required add-ons.md",
+    "Mechanical Design/Cooling Electronics.md"
+  ]
+}
