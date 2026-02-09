@@ -73,4 +73,45 @@ https://www.vital-parts.co.uk/weight-rated-tilting-adjustable-feet---wamf040-252
 [No Mesothelioma hopefully](https://shop.vitcas.com/bio-soluble-fibre-blanket-1200-c-25mm.html)
 
 
+# Lower Panel Blocks
+---
+When the frame structure was changed from using extruded aluminium sections to using angle bar brackets, an oversight was missed; the lower frame panels cannot all be attached as the brackets do not retain the nuts like the extruded sections do. Therefore, the final panels to be mounted cannot use this nut and bolt connection. Instead, they must use a connection that only requires exterior access, such as a tapped hole and bolt.
 
+**Design Requirements**
+- Brackets must adhere to existing component interfaces, avoiding reworking any other components (including bolts).
+- The brackets should be made from aluminium to make machining quicker and easier.
+- All components must be made from the same piece of stock.
+- The brackets must only require external access to mount the final two panels.
+- The brackets cannot impede internal access when mounting the other panels to the frame.
+- The brackets must be able to be attached after other panels are installed.
+
+To solve this problem, several block brackets have been designed, and will be machined from either aluminium offcuts or square bar stock. 
+
+The final panels to be installed are the front panel, which holds the controller and power delivery boards, and the rear panel, which holds the ATX power supply. These panels are mounted as shown below:
+
+![[lower panel blocks.png]]
+
+# Upper Panel Redesign
+---
+The original design of the upper panels has made drilling the upper holes accurately very difficult with available equipment. To address this, the upper section is to be redesigned. The panel design does not need to be adhered to, however all component interfaces must remain the same, and access cannot be lost to internal components, such as the terminal wiring.
+
+Two concepts have been imagined; a split panel design which resembles the current design but with flat panels and brackets as seen in the lower frame section, and a wraparound design, with one thin sheet of metal formed into an octagonal shape, with brackets as before and an access hatch for the terminal wiring. These concepts will be investigated for cost and viability, then one selected and pursued.
+
+**Individual Panels Advantages**
+- Repair and replacement will be cheaper for individual panels.
+- Upgrading panels is simpler as they are flat and fit into a mill.
+- Looser tolerances can be accepted as errors will not stack over the whole perimeter.
+
+**Wraparound Design Advantages**
+- The number of parts to produce is almost halved over the panel design.
+- Yes, access panels can be added, allowing tool-less opening of the upper frame.
+- The upper frame will be stronger, as corners are connected. This permits a lighter subassembly, reducing risks of injury when handling the furnace, and improving stability.
+
+
+Given the high cost of the wraparound design, as well as concerns regarding accuracy over 7 successive bends, the individual panels design has been selected. Three variants of panel are required: 
+
+- Base panel
+- Hinge panel
+- Handle panel
+
+The handles must be spring loaded to prevent accidentally catching on casting equipment on non-level ground, and should be corrosion-resistant to prevent weakening if stored in humid conditions for extended periods of time. Finally, the hole pattern must be available, so that panels may be ordered before receiving handles. One candidate is [this](https://protex.com/95-637SS-spring-loaded-handle-stainless-steel-natural) handle from Protex, made from stainless steel.
