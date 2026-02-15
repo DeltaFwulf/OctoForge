@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "64025bca0d5ce083",
+        "id": "02bbc61cc1fcd1f9",
         "type": "tabs",
         "children": [
           {
-            "id": "e61aef592cb3f53d",
+            "id": "0041162a953dbbaa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Test Campaign 1/Thermal Testing.md",
+                "file": "Mechanical/Frame Design.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thermal Testing"
+              "title": "Frame Design"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Thermal Analysis/Plots/heat loss against both brick thickness and rockwool thickness.png",
+                "file": "Mechanical/Thermal Modelling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for heat loss against both brick thickness and rockwool thickness"
+              "title": "Backlinks for Thermal Modelling"
             }
           },
           {
@@ -183,29 +183,29 @@
       "bases:Create new base": false
     }
   },
-  "active": "0131f824fdae59b9",
+  "active": "0041162a953dbbaa",
   "lastOpenFiles": [
-    "Mechanical/Frame Design.md",
-    "Test Campaign 1/Thermal Testing.md",
-    "Test Campaign 1",
     "Mechanical/Learning to Use FreeCAD Effectively.md",
     "Mechanical/Thermal Modelling.md",
+    "Mechanical/Frame Design.md",
+    "Mechanical/Images/lower panel blocks.png",
+    "Mechanical/Images/old furnace assembly.png",
+    "Mechanical/Images/Steady State Thermal Plots/heat loss vs rockwool thickness.png",
     "Power/PowerDesignDevLog.md",
     "Power/Power Design.md",
+    "Test Campaign 1/Thermal Testing.md",
+    "Test Campaign 1",
     "Cooling Electronics.md",
     "Tasks (move into issues).md",
     "Design Specification.md",
-    "Mechanical/Images/lower panel blocks.png",
-    "Mechanical/Images/old furnace assembly.png",
     "Mechanical/Images",
     "Mechanical/New folder",
-    "Mechanical/Plots/wall heat loss against thickness(old).png",
-    "Mechanical/Plots/Q against brick and rockwool thicknesses.svg",
-    "Mechanical/Plots/outer wall temperature vs rockwool thickness.png",
-    "Mechanical/Plots/heat loss vs rockwool thickness.png",
-    "Mechanical/Plots/heat loss against both brick thickness and rockwool thickness.png",
+    "Mechanical/Images/Steady State Thermal Plots/wall heat loss against thickness(old).png",
+    "Mechanical/Images/Steady State Thermal Plots/Q against brick and rockwool thicknesses.svg",
+    "Mechanical/Images/Steady State Thermal Plots/outer wall temperature vs rockwool thickness.png",
+    "Mechanical/Images/Steady State Thermal Plots/heat loss against both brick thickness and rockwool thickness.png",
     "Mechanical/Outline.md",
-    "Mechanical/Plots",
+    "Mechanical/Images/Steady State Thermal Plots",
     "Useful Design Tools.md",
     "Budget.md",
     "Mechanical",

@@ -171,3 +171,4 @@ I found that by adding only 80mm of rockwool around the firebricks and 12mm of M
 ## You guessed it, it's a resistance network (literally)
 
 we will model the wire as one long coil subject to blackbody / grey-body radiation and convection in a large black/grey body chamber (partially accurate assumptions). 
+
