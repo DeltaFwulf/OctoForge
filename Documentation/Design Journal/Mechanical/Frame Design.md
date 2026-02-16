@@ -101,6 +101,9 @@ A spring loaded, stainless steel [handle](https://protex.com/95-637SS-spring-loa
 ---
 Stupidly, I've lost the original lid handle, but have also produced a lid with drilled holes spaced at 100 mm apart. This means that unless I want to drill a really weirdly shaped object, I have to find a handle that's also 100 mm wide (they're not that common). [this](https://uk.rs-online.com/web/p/drawer-handles-cabinet-handles/9174321) handle would do the trick, but it's not stainless like I want, or the colour I'd like.
 
+**16/02/2026**
+After looking further, I found [this](https://www.wdscomponents.com/en-gb/100mm-hole-centres-x-m5-bow-handle-oval-profile-orange) other handle that fits a bit better and isn't very expensive.
+
 ### Other Changes
 
 > - chamber braces have been redesigned for manufacture
