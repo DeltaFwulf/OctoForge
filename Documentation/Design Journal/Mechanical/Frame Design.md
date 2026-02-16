@@ -109,3 +109,4 @@ Stupidly, I've lost the original lid handle, but have also produced a lid with d
 > - the furnace colour has been chosen: an off-white as a reference to [Cooker](https://wallaceandgromit.fandom.com/wiki/Cooker) from *A Grand Day Out*
 > - Lid handle has been selected and added to the GA
 
+
