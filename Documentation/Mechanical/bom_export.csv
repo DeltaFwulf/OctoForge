@@ -1,0 +1,123 @@
+Index	Name	Description	File Name	Quantity
+1	base		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-FRPLB-AA.FCStd	1
+2	Body		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-FRPLC-AA.FCStd	1
+3	panel		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-CHTOP-AA.FCStd	1
+4	outer half		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/OCT-LDHNG-AA.FCStd	1
+5	inner half		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/OCT-LDHNG-AA.FCStd	1
+6	lid subassembly		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+6.1	lid assembly		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/lid subassembly.FCStd	1
+6.1.1	lid frame		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-LIDFR-AA.FCStd	2
+6.1.2	base brick		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-LIDBR-AA.FCStd	12
+6.1.3	base brick		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-LIDBR-BA.FCStd	4
+7	foot		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/OCT-LFOOT-AA.FCStd	4
+8	chamber		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.1	chamber		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.1	base		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-CHBAS-AA.FCStd	2
+8.1.2	alt B		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-CHBRK-AA.FCStd	4
+8.1.3	alt A		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-CHBRK-AA.FCStd	12
+8.1.4	terminal 1		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.4.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.1.4.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	2
+8.1.4.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	8
+8.1.5	terminal 2		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.5.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.1.5.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	2
+8.1.5.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	8
+8.1.6	terminal 3		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.6.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.1.6.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	2
+8.1.6.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	8
+8.1.7	terminal 4		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.7.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.1.7.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	2
+8.1.7.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	8
+8.1.8	terminal 5		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.8.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.1.8.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	2
+8.1.8.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	8
+8.1.9	terminal 6		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.9.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.1.9.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	2
+8.1.9.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	8
+8.1.10	terminal 7		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.10.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.1.10.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	2
+8.1.10.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	8
+8.1.11	terminal 8		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.1.11.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.1.11.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	2
+8.1.11.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	8
+8.2	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.2.1	terminal 1		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.2.1.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.2.1.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	3
+8.2.1.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	12
+8.3	terminal002		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.3.1	terminal 2		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.3.1.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.3.1.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	3
+8.3.1.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	12
+8.4	terminal004		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.4.1	terminal 3		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.4.1.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.4.1.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	3
+8.4.1.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	12
+8.5	terminal006		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.5.1	terminal 4		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.5.1.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.5.1.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	3
+8.5.1.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	12
+8.6	terminal008		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.6.1	terminal 5		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.6.1.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.6.1.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	3
+8.6.1.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	12
+8.7	terminal010		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.7.1	terminal 6		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.7.1.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.7.1.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	3
+8.7.1.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	12
+8.8	terminal012		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.8.1	terminal 7		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.8.1.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.8.1.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	3
+8.8.1.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	12
+8.9	terminal014		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+8.9.1	terminal 8		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/chamber subassembly.FCStd	1
+8.9.1.1	terminal		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/power terminal subassembly.FCStd	1
+8.9.1.1.1	bar		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTERM-AA.FCStd	3
+8.9.1.1.2	nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-PTNUT-AA.FCStd	12
+9	bracket		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-LBRAC-AA.FCStd	6
+10	bracket		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-UBRAC-AA.FCStd	6
+11	front panel		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-LFPNL-FB.FCStd	1
+12	base panel		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-LFPNL-AB.FCStd	6
+13	PSU		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OCT-ATXPS-AA.FCStd	1
+14	base panel		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-LFPNL-PB.FCStd	1
+15	OCT-UFPNL-AB		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-UFPNL.FCStd	5
+16	OCT-CPBRC-AA		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-CPBRC.FCStd	7
+17	OCT-UFPNL-CB		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-UFPNL.FCStd	2
+18	lower block		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-LBLOK-AB.FCStd	4
+19	upper left block		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-ULBLK-AB.FCStd	2
+20	upper right block		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-URBLK-AB.FCStd	2
+21	OCT-UFPNL-BB		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-UFPNL.FCStd	1
+22	OCT-CPBRC-BA		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-CPBRC.FCStd	1
+23	97-637SS		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	2
+23.1	637ALG MSZN		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	1
+23.2	637BMSZN		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	1
+23.3	596DGFNMSZN		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	1
+23.3.1	596CMSZN		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	1
+23.3.2	Moulded Sleeve 89MM X 15MM		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	1
+23.4	596-7SS IN ASSEMBLY		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	1
+23.5	637-1MSZN IN ASSEMBLY		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	1
+23.6	637-1MSZN IN ASSEMBLY001		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 95-637SS spring loaded handle.FCStd	1
+24	637DSS		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/Protex 637DSS Handle Backing Plate Stainless Steel (Natural).FCStd	2
+25	brace		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical RAD/OCT-CHBRA-AB.FCStd	8
+26	hinge fastener group		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	8
+26.1	M6-Washer		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+26.2	M6-Nut		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+26.3	M6-Washer		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+26.4	M6x16-Screw		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+27	handle		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/mechanical COTS/WDS 8520-251 Handle.FCStd	1
+28	lid handle fastener group		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	2
+28.1	M6-Washer		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1
+28.2	M6x14-Screw		/home/delta-v/Documents/GitHub/OctoForge/Design/Mechanical/OctoForge.FCStd	1

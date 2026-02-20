@@ -11,14 +11,12 @@
             "id": "0041162a953dbbaa",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Mechanical/Frame Design.md",
-                "mode": "source",
-                "source": false
+                "file": "Mechanical/Images/old furnace assembly.png"
               },
-              "icon": "lucide-file",
-              "title": "Frame Design"
+              "icon": "lucide-image",
+              "title": "old furnace assembly"
             }
           }
         ]
@@ -185,10 +183,10 @@
   },
   "active": "0041162a953dbbaa",
   "lastOpenFiles": [
+    "Mechanical/Images/lower panel blocks.png",
+    "Mechanical/Frame Design.md",
     "Mechanical/Learning to Use FreeCAD Effectively.md",
     "Mechanical/Thermal Modelling.md",
-    "Mechanical/Frame Design.md",
-    "Mechanical/Images/lower panel blocks.png",
     "Mechanical/Images/old furnace assembly.png",
     "Mechanical/Images/Steady State Thermal Plots/heat loss vs rockwool thickness.png",
     "Power/PowerDesignDevLog.md",
