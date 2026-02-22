@@ -36,12 +36,8 @@ Parts have sorted into three categories: machined components, that must be produ
 ## Production Information
 ---
 [Fractory](https://fractory.com/) offers relatively affordable laser cut / bending options for mild steel or galvanised steel parts.
-
-## Adjustable Feet
-https://www.vital-parts.co.uk/weight-rated-tilting-adjustable-feet---wamf040-2523-p.asp
-
-[No Mesothelioma hopefully](https://shop.vitcas.com/bio-soluble-fibre-blanket-1200-c-25mm.html)
-
+[Adjustable Feet](https://www.vital-parts.co.uk/weight-rated-tilting-adjustable-feet---wamf040-2523-p.asp)
+[Rockwool Insulation](https://shop.vitcas.com/bio-soluble-fibre-blanket-1200-c-25mm.html)
 # February 2026 - Frame Redesign
 ---
 During manufacture of the frame, several issues were highlighted with the lower panel mounting solution and the upper panels. These, as well as final design iterations for other components, are discussed below.
@@ -106,10 +102,8 @@ After looking further, I found [this](https://www.wdscomponents.com/en-gb/100mm-
 
 ### Other Changes
 
-> - chamber braces have been redesigned for manufacture
-> - fasteners have been selected and added to the GA
+> - chamber braces have been redesigned for production
+> - fasteners have been selected and added to the GA, see [[Learning to Use FreeCAD Effectively]] for details about how BOM was updated.
 > - the bill of materials has been updated to track all frame components
 > - the furnace colour has been chosen: an off-white as a reference to [Cooker](https://wallaceandgromit.fandom.com/wiki/Cooker) from *A Grand Day Out*
 > - Lid handle has been selected and added to the GA
-
-

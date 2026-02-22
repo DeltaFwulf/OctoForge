@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "02bbc61cc1fcd1f9",
+        "id": "a1e8c7b8a5bf35c3",
         "type": "tabs",
         "children": [
           {
-            "id": "0041162a953dbbaa",
+            "id": "6e285d84a8bf14f1",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Mechanical/Images/old furnace assembly.png"
+                "file": "Mechanical/Thermal Modelling.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "old furnace assembly"
+              "icon": "lucide-file",
+              "title": "Thermal Modelling"
             }
           }
         ]
@@ -181,17 +183,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "0041162a953dbbaa",
+  "active": "6e285d84a8bf14f1",
   "lastOpenFiles": [
-    "Mechanical/Images/lower panel blocks.png",
     "Mechanical/Frame Design.md",
     "Mechanical/Learning to Use FreeCAD Effectively.md",
     "Mechanical/Thermal Modelling.md",
+    "Test Campaign 1/Thermal Testing.md",
     "Mechanical/Images/old furnace assembly.png",
+    "Mechanical/Images/lower panel blocks.png",
     "Mechanical/Images/Steady State Thermal Plots/heat loss vs rockwool thickness.png",
     "Power/PowerDesignDevLog.md",
     "Power/Power Design.md",
-    "Test Campaign 1/Thermal Testing.md",
     "Test Campaign 1",
     "Cooling Electronics.md",
     "Tasks (move into issues).md",
