@@ -28,19 +28,16 @@ For now, I think I'll stick with Assembly 4 as it appears to scale better than A
 
 N.B. it is quite convenient to create simpler assemblies (2 or 3 minor components) just using the Part object with several bodies contained within.
 
+**22/02/2026**
+Until further notice, all assemblies must use the integrated assembly workbench for compatibility with existing models.
+
 -------------------------------------------------------------------------------
 ## Creating part variants
 
 To create multiple variants of a part (for example, side panels with different holes cut into them), it's useful to create a base part, then reference this geometry in different, dependent bodies. To do this, create the base body, create the dependent body, then in the properties tab of the dependent part, select the base body in the base feature row.
 
--------------------------------------------------------------------------------
-## Using Links
-
-These seem to be a less janky way to create part variants than using base geometry. (populate with notes once you figure out how to use them properly).
-
-[wiki page](https://wiki.freecad.org/Std_LinkMake#Usage)
-
-These are quite useful for instancing objects, however it doesn't replace base geometry (linked objects are the same, like a pointer rather than a copy and modifications apply to all copies regardless of the copy edited).
+**22/02/2026**
+A better method for this is to use [clones](https://wiki.freecad.org/PartDesign_Clone). For example, when panels with the same overall footprint but different hole patterns are required, the base panel with only share features should be made in one body, then cloned to create other bodies. These then reference the original geometry directly, and can have their own downstream geometries. [Here](https://www.youtube.com/watch?v=6_FBijwp-l0) is a good video explaining this feature.
 
 -------------------------------------------------------------------------------
 ## Spreadsheets & Master Documents
@@ -52,3 +49,19 @@ note to self: you can use a single spreadsheet in a single master document over 
 
 This is called Part Thickness and can be found in the *Part* workbench.
 [guide](https://forum.freecad.org/viewtopic.php?f=3&t=3766&p=29741&hilit=enclosure#p29547)
+
+## Generating a Bill of Materials (BOM)
+---
+**21/02/2026**
+Get ready for some bullshit. This is the current best way I've found to add many components to an assembly and also get some sort of information about quantities inside of a BOM. 
+
+- Do not use Draft WB arrays - they will not appear in the assembly BOM [see here](https://github.com/FreeCAD/FreeCAD/issues/26221), and the fastener BOM lists them but gives quantity 0.
+- If link arrays are used, they do not appear at all in the BOM, however they do appear in the fastener WB BOM.
+
+To get the fastener BOM to show all fasteners, fasteners can be created, placed using the assembly, but placing the fasteners into their own part containers. To include the fasteners in the assembly, they can later be added by dragging into the assembly and dragging back out (this is the only way the insert component will recognise it as able to be added).
+
+Hot tip: if fasteners are not visible, they are not added to the fastener BOM - use this to hide any duplicates, either those in the assembly or those in the part containers.
+
+Each type of fastener has been added to a part. For example, the lower panel bracket fasteners have all been added to the *Lower panel bracket fasteners* part. In this method, if link arrays are convenient, they have been used; otherwise, placement was manual for each occurrence of each fastener.
+
+The fastener BOM should now show all occurrences of all fasteners this way.

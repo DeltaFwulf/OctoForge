@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "64025bca0d5ce083",
+        "id": "a1e8c7b8a5bf35c3",
         "type": "tabs",
         "children": [
           {
-            "id": "e61aef592cb3f53d",
+            "id": "6e285d84a8bf14f1",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Mechanical/Plots/wall heat loss against thickness(old).png"
+                "file": "Mechanical/Frame Design.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "wall heat loss against thickness(old)"
+              "icon": "lucide-file",
+              "title": "Frame Design"
             }
           }
         ]
@@ -92,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Thermal Analysis/Plots/heat loss against both brick thickness and rockwool thickness.png",
+                "file": "Mechanical/Thermal Modelling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for heat loss against both brick thickness and rockwool thickness"
+              "title": "Backlinks for Thermal Modelling"
             }
           },
           {
@@ -181,22 +183,30 @@
       "bases:Create new base": false
     }
   },
-  "active": "0131f824fdae59b9",
+  "active": "6e285d84a8bf14f1",
   "lastOpenFiles": [
-    "Mechanical/Plots/Q against brick and rockwool thicknesses.svg",
-    "Mechanical/Plots/outer wall temperature vs rockwool thickness.png",
-    "Mechanical/Plots/heat loss vs rockwool thickness.png",
-    "Mechanical/Plots/heat loss against both brick thickness and rockwool thickness.png",
-    "Mechanical/DevLog.md",
-    "Mechanical/Frame Design.md",
-    "Mechanical/Outline.md",
-    "Design Specification.md",
-    "Mechanical/Plots/wall heat loss against thickness(old).png",
-    "Mechanical/Plots",
+    "Mechanical/Images/old furnace assembly.png",
+    "Mechanical/Images/lower panel blocks.png",
+    "Mechanical/Images/Steady State Thermal Plots/heat loss vs rockwool thickness.png",
+    "Mechanical/Images/Steady State Thermal Plots/outer wall temperature vs rockwool thickness.png",
+    "Mechanical/Images/Steady State Thermal Plots/wall heat loss against thickness(old).png",
+    "Mechanical/Images/Steady State Thermal Plots/Q against brick and rockwool thicknesses.svg",
+    "Mechanical/Images/Steady State Thermal Plots/heat loss against both brick thickness and rockwool thickness.png",
+    "Mechanical/Thermal Modelling.md",
     "Mechanical/Learning to Use FreeCAD Effectively.md",
-    "Tasks (move into issues).md",
-    "Useful Design Tools.md",
+    "Mechanical/Frame Design.md",
+    "Test Campaign 1/Thermal Testing.md",
+    "Power/PowerDesignDevLog.md",
+    "Power/Power Design.md",
+    "Test Campaign 1",
     "Cooling Electronics.md",
+    "Tasks (move into issues).md",
+    "Design Specification.md",
+    "Mechanical/Images",
+    "Mechanical/New folder",
+    "Mechanical/Outline.md",
+    "Mechanical/Images/Steady State Thermal Plots",
+    "Useful Design Tools.md",
     "Budget.md",
     "Mechanical",
     "README.md",
@@ -208,13 +218,8 @@
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-LBRAC-AA.20260206-182423.FCBak",
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-LBRAC-AA.FCStd.d22f513a-8738-4e5a-9724-a255204c9358",
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.20260206-183001.FCBak",
-    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.FCStd.a5b768bc-79da-4fee-aa8e-6d854e7c3e71",
-    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.20260206-182858.FCBak",
-    "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.FCStd.c5378205-ce21-4050-a831-3aebc8117e6b",
     "Thermal Analysis/Plots/heat loss vs rockwool thickness.png",
     "Thermal Analysis/Plots/Q against brick and rockwool thicknesses.svg",
-    "Thermal Analysis/Plots/outer wall temperature vs rockwool thickness.png",
-    "Thermal Analysis/Plots/wall heat loss against thickness(old).png",
     "Mechanical Design/Useful Design Tools.md",
     "Mechanical Design/Learning to Use FreeCAD Effectively.md",
     "Mechanical Design/Frame Design.md",
