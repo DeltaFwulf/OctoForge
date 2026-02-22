@@ -98,7 +98,11 @@ A spring loaded, stainless steel [handle](https://protex.com/95-637SS-spring-loa
 Stupidly, I've lost the original lid handle, but have also produced a lid with drilled holes spaced at 100 mm apart. This means that unless I want to drill a really weirdly shaped object, I have to find a handle that's also 100 mm wide (they're not that common). [this](https://uk.rs-online.com/web/p/drawer-handles-cabinet-handles/9174321) handle would do the trick, but it's not stainless like I want, or the colour I'd like.
 
 **16/02/2026**
-After looking further, I found [this](https://www.wdscomponents.com/en-gb/100mm-hole-centres-x-m5-bow-handle-oval-profile-orange) other handle that fits a bit better and isn't very expensive.
+After looking further, I found [this](https://www.wdscomponents.com/en-gb/100mm-hole-centres-x-m6-silver-bow-handle-oval-profile)) other handle that fits a bit better and isn't very expensive.
+
+**22/02/2026**
+By adding a second washer onto the handle, an M6x16mm bolt could be used instead of the M6x14 currently marked. This saves a few quid on fasteners, as all other M6 bolts are M6x16mm.
+- TBH, the distance predicted is 15.8mm and the hole seems to have relief beyond the thread; worst case with one washer I'll have to shim the handle or file down the bolt a tiny amount. Let's stick with one washer.
 
 ### Other Changes
 
@@ -107,3 +111,28 @@ After looking further, I found [this](https://www.wdscomponents.com/en-gb/100mm-
 > - the bill of materials has been updated to track all frame components
 > - the furnace colour has been chosen: an off-white as a reference to [Cooker](https://wallaceandgromit.fandom.com/wiki/Cooker) from *A Grand Day Out*
 > - Lid handle has been selected and added to the GA
+
+
+
+### Finalising the Chamber Braces
+---
+**22/02/2026**
+Originally, the chamber braces were to be manufactured by Fractory, however, the expected cost of 8 mild steel parts from them is about £70, far too high a price to justify for some brackets. Instead, these will be produced at the hackspace from angle stock. This stock should be thin enough for the jig saw to make cuts through, and not hardened so that any end mill / drill can finish the job on the mill.
+
+**Potential Options**
+- Using thin stock, cut blanks, bend to shape with some jig / bender and then drill holes
+- Cut the stock on a band saw, or buy from a shop that can cut lengths
+- Use a jig saw to cut the stock and clean up rough cuts on the mill
+- Order parts pre-made from Fractory or similar
+
+From these four options, the best seems to be to buy the stock online but already cut to length. The brace's width does not need to be very accurate; the important dimension is the hole spacing. By drilling the holes on the mill, this is not a problem. The stock can be obtained for less than £15 and milled for free* (my time is worthless).
+
+The braces will be made from 25 x 25 x 3 mm mild steel, which will be black oxide treated after machining for extra corrosion resistance in the high temperature environment of the chamber (expected in the 200 to 400 degree Celsius range during operation).
+
+
+## Preventing the furnace from *rusting*
+
+**22/02/2026**
+As the furnace is largely manufactured from various grades of mild steel, and given that it will likely be stored in a dank garage for months at a time, rust is an existential concern for OctoForge.
+
+To prevent this, all outer panels will be coated in a pleasing and heat resistant paint. Internal components expecting high heat will be black oxide treated, and where touching aluminium parts, painted or clear coated (if this doesn't already solve the galvanic corrosion issue).
