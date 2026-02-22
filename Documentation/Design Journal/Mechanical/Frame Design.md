@@ -136,3 +136,7 @@ The braces will be made from 25 x 25 x 3 mm mild steel, which will be black oxid
 As the furnace is largely manufactured from various grades of mild steel, and given that it will likely be stored in a dank garage for months at a time, rust is an existential concern for OctoForge.
 
 To prevent this, all outer panels will be coated in a pleasing and heat resistant paint. Internal components expecting high heat will be black oxide treated, and where touching aluminium parts, painted or clear coated (if this doesn't already solve the galvanic corrosion issue).
+
+
+## Further Cost Saving Measures
+On Fractory, the cost of adding the two lower panels threatens to add a further £120 to the order cost! To get around this, I can attempt to mill out the front and PSU panel pockets at the hackspace. This would save a lot of money and should be relatively simple to do, by salvaging the upper panel stock now not being used.
