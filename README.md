@@ -10,6 +10,8 @@ There are three main areas of which the furnace is comprised:
 
 Progress is being tracked [here](https://github.com/users/DeltaFwulf/projects/2).
 
+![Screenshot of OctoForge](/resources/furnace-screenshot-01-03-2026.png)
+
 ## How to use this project?
 The following software is required to view the various CAD files:
 - FreeCAD-1.0.2
@@ -17,7 +19,7 @@ The following software is required to view the various CAD files:
 
 ## How to reproduce OctoForge?
 - Sheet metal components were ordered from xxx with the following parameters:
-  -
+  - abc
 - Fittings were ordered using the provided [BOM](Documentation/Mechanical/BOM.ods) from [Accu](https://www.accu.co.uk/).
 - PCBs were ordered from [JLCPCB](jlcpcb.com) with the following parameters:
   - 2 layers
