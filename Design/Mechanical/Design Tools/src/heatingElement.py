@@ -1,0 +1,1 @@
+"""Calculate the surface loading of a heating element given diameter, radiative properties, and temperatures."""

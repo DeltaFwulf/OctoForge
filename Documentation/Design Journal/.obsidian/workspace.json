@@ -13,12 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mechanical/Frame Design.md",
+                "file": "Mechanical/Thermal Modelling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Frame Design"
+              "title": "Thermal Modelling"
+            }
+          },
+          {
+            "id": "58bc69bb57a00d81",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.12.4"
             }
           }
         ]
@@ -185,6 +197,11 @@
   },
   "active": "6e285d84a8bf14f1",
   "lastOpenFiles": [
+    "Mechanical/Learning to Use FreeCAD Effectively.md",
+    "Mechanical/Thermal Modelling.md",
+    "Mechanical/Images/Steady State Thermal Plots/steady power vs rockwool thickness, 1200C.png",
+    "Mechanical/Images/OCT-FRAME-A isometric.png",
+    "Mechanical/Frame Design.md",
     "Mechanical/Images/old furnace assembly.png",
     "Mechanical/Images/lower panel blocks.png",
     "Mechanical/Images/Steady State Thermal Plots/heat loss vs rockwool thickness.png",
@@ -192,9 +209,6 @@
     "Mechanical/Images/Steady State Thermal Plots/wall heat loss against thickness(old).png",
     "Mechanical/Images/Steady State Thermal Plots/Q against brick and rockwool thicknesses.svg",
     "Mechanical/Images/Steady State Thermal Plots/heat loss against both brick thickness and rockwool thickness.png",
-    "Mechanical/Thermal Modelling.md",
-    "Mechanical/Learning to Use FreeCAD Effectively.md",
-    "Mechanical/Frame Design.md",
     "Test Campaign 1/Thermal Testing.md",
     "Power/PowerDesignDevLog.md",
     "Power/Power Design.md",
@@ -218,8 +232,6 @@
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-LBRAC-AA.20260206-182423.FCBak",
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-LBRAC-AA.FCStd.d22f513a-8738-4e5a-9724-a255204c9358",
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.20260206-183001.FCBak",
-    "Thermal Analysis/Plots/heat loss vs rockwool thickness.png",
-    "Thermal Analysis/Plots/Q against brick and rockwool thicknesses.svg",
     "Mechanical Design/Useful Design Tools.md",
     "Mechanical Design/Learning to Use FreeCAD Effectively.md",
     "Mechanical Design/Frame Design.md",
