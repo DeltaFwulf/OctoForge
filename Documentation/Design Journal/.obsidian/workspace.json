@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mechanical/Thermal Modelling.md",
-                "mode": "source",
+                "file": "Mechanical/Heating Element Design.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thermal Modelling"
+              "title": "Heating Element Design"
             }
           },
           {
@@ -197,11 +197,19 @@
   },
   "active": "6e285d84a8bf14f1",
   "lastOpenFiles": [
-    "Mechanical/Learning to Use FreeCAD Effectively.md",
+    "Mechanical/Frame Design.md",
     "Mechanical/Thermal Modelling.md",
+    "Mechanical/Learning to Use FreeCAD Effectively.md",
+    "Mechanical/Heating Element Design.md",
+    "Power/Power Design.md",
+    "Power/PowerDesignDevLog.md",
+    "Tasks (move into issues).md",
+    "Design Specification.md",
+    "Cooling Electronics.md",
+    "Useful Design Tools.md",
+    "Mechanical/Images/heating element geometry.png",
     "Mechanical/Images/Steady State Thermal Plots/steady power vs rockwool thickness, 1200C.png",
     "Mechanical/Images/OCT-FRAME-A isometric.png",
-    "Mechanical/Frame Design.md",
     "Mechanical/Images/old furnace assembly.png",
     "Mechanical/Images/lower panel blocks.png",
     "Mechanical/Images/Steady State Thermal Plots/heat loss vs rockwool thickness.png",
@@ -210,17 +218,11 @@
     "Mechanical/Images/Steady State Thermal Plots/Q against brick and rockwool thicknesses.svg",
     "Mechanical/Images/Steady State Thermal Plots/heat loss against both brick thickness and rockwool thickness.png",
     "Test Campaign 1/Thermal Testing.md",
-    "Power/PowerDesignDevLog.md",
-    "Power/Power Design.md",
     "Test Campaign 1",
-    "Cooling Electronics.md",
-    "Tasks (move into issues).md",
-    "Design Specification.md",
     "Mechanical/Images",
     "Mechanical/New folder",
     "Mechanical/Outline.md",
     "Mechanical/Images/Steady State Thermal Plots",
-    "Useful Design Tools.md",
     "Budget.md",
     "Mechanical",
     "README.md",
@@ -228,7 +230,6 @@
     "Untitled.base",
     "Example Design/Scripts/Script 0/output 0.md",
     "Example Design/Scripts/Script 0/This is a script.py.md",
-    "Thermal Analysis/Plots/heat loss against both brick thickness and rockwool thickness.png",
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-LBRAC-AA.20260206-182423.FCBak",
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-LBRAC-AA.FCStd.d22f513a-8738-4e5a-9724-a255204c9358",
     "Mechanical Design/CAD/rev2/mechanical RAD/OCT-UBRAC-AA.20260206-183001.FCBak",
