@@ -153,30 +153,55 @@ The solution chosen is up to the designer, though care must be taken to ensure t
 
 The chosen wire is AWG 18, or 1.02 mm diameter, made from Kanthal A1. This gives a required length of 866.9796 mm.
 
-| Variable | Value     | Unit                 |
-| -------- | --------- | -------------------- |
-| Q        | 90        | W                    |
-| V        | 12        | V                    |
-| R        | 1.6       | $\Omega$             |
-| F        | 1.04      | ul                   |
-| D        | 1.02      | mm                   |
-| $\rho_0$ | 1.45      | $\mu \Omega$ m^2 / m |
-| q''      | 32395.419 | W/m^2                |
-| T_new    | 1533.07   | K                    |
-| F_new    | 1.04      | ul                   |
-| l        | 866.9796  | mm                   |
-| $p_m$    | 3.06      | mm                   |
-| D        | 80        | mm                   |
-| $d_c$    | 3.905     | mm                   |
-| p        | 3.209     | mm                   |
-| $D_i$    | 76.095    | mm                   |
+Alternatively, since the planned coiling jig (link to this), will use some shaft with a given diameter, the coil diameter becomes a fixed quantity, or at least not the driven value. Instead, the coil diameter should be set based on available coil shaft diameters, and the pitch calculated. From before:
+
+$$ L = l\sin\left(\arctan\left(\frac{p}{\pi d_c}\right)\right) $$
+Rearranging for p and substituting for L:
+
+$$ p = \pi d_c\tan\left(\arcsin\left(\frac{D\theta}{2l}\right)\right) $$
+And for minimum pitch:
+$$ p_m = \pi \frac{d_c(D - d_c)}{D} \tan\left(\arcsin\left(\frac{D\theta}{2l}\right)\right)$$
+
+There exists a window of valid coil diameters, due to the parabolic nature of the minimum pitch equation. Any value of $d_c$within this window may be used to create heating elements. The bounds are given by the solution of the quadratic:
+
+letting k = $\frac{\pi}{D}\tan\left(\arcsin\left(\frac{D\theta}{2l}\right)\right)$:
+$$ d_c^2 - Dd_c + \frac{p_m}{k} = 0 $$
+$$ d_c = \frac{D \pm \sqrt{D^2 - \frac{4p_m}{k}}}{2} $$
+
+The proposed solution method is as follows:
+1. Calculate, given the minimum pitch constraint, a valid coil diameter.
+2. Adjust the coil diameter to some useable value and check the minimum pitch.
+3. Repeat until a valid coil diameter is found, using the solved pitch.
+4. Calculate the stretched loop length from the equation for L.
+
+| Variable    | Value     | Unit                 |
+| ----------- | --------- | -------------------- |
+| Q           | 90        | W                    |
+| V           | 12        | V                    |
+| R           | 1.6       | $\Omega$             |
+| F           | 1.04      | ul                   |
+| D           | 1.02      | mm                   |
+| $\rho_0$    | 1.45      | $\mu \Omega$ m^2 / m |
+| q''         | 32395.419 | W/m^2                |
+| T_new       | 1533.07   | K                    |
+| F_new       | 1.04      | ul                   |
+| l           | 866.9796  | mm                   |
+| $p_m$       | 3.06      | mm                   |
+| D           | 70        | mm                   |
+| $\theta$    | 300       | deg                  |
+| $d_c$       | 6.02      | mm                   |
+| $d_{shaft}$ | 5         | mm                   |
+| p           | 4.090     | mm                   |
+| L           | 183.3     | mm                   |
+| $D_i$       | 66.38     | mm                   |
+
 
 ![[heating element geometry.png]]
-*Coil geometry modelled in FreeCAD.*
+*Heating element geometry modelled in FreeCAD.*
 
 The calculated coil diameter falls into the typical 3 to 6 diameter range for the wire and so was accepted. While thinner gauge wires do offer cheaper and shorter lengths, they are more sensitive to non-constant diameters caused by scratches or nicks, and so without careful handling these are more likely to suffer damage from hot spots.
 
-To model the heating element in FreeCAD, the *PathHelix* macro was used, from the [GrabBag](https://github.com/pyro9/GrabBag) repository by pyro9. Click [here](https://www.youtube.com/watch?v=COVKF25ttLY) for an installation guide.
+To model the heating element in FreeCAD, the *PathHelix* macro was used, from the [GrabBag](https://github.com/pyro9/GrabBag) repository by pyro9. Click [here](https://www.youtube.com/watch?v=COVKF25ttLY) for an installation guide. To create the full path, multiple sketches were [joined](https://www.youtube.com/watch?v=jE-H_30MbcA) together in a single binder, then an additive pipe used to sweep the wire cross section - beware, this takes a VERY long time to render.
 
 
 ## Power Delivery
