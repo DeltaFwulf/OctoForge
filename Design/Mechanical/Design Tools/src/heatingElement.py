@@ -75,8 +75,9 @@ def coilDiameterBounds(dLoop:float, lWire:float, dWire:float, minPitch:float, ar
 
     print(f"Mean pitch: {'%.3f' % (1000*meanPitch)} mm, minimum pitch: {'%.3f' % (1000*minorPitch)} mm.")
     print(f"Stretched length: {'%.1f' % (500*dLoop*arcAng)} mm")
+    print(f"Minor loop diameter: {'%.1f' % (1000*(dLoop - dCoil - dWire))} mm")
 
 
-wireLength(D=0.00102, Q=90.0, voltage=12.0, qMax=50e3, Tchamber=1473)
+#wireLength(D=0.00102, Q=90.0, voltage=12.0, qMax=50e3, Tchamber=1473)
 #coilDiameter(dLoop=0.07, dWire=0.00102, minPitch=0.00306, lWire=0.8669796, arcAng=7*pi / 4)
-coilDiameterBounds(dLoop=0.07, lWire=0.8669796, dWire=1.02e-3, minPitch=3.06e-3, arcAng=300*pi/180)
+coilDiameterBounds(dLoop=0.083, lWire=0.8669796, dWire=1.02e-3, minPitch=3.06e-3, arcAng=300*pi/180)

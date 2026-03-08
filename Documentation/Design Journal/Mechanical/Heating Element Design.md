@@ -174,6 +174,49 @@ The proposed solution method is as follows:
 3. Repeat until a valid coil diameter is found, using the solved pitch.
 4. Calculate the stretched loop length from the equation for L.
 
+A short python function to help calculate this geometry has been added below:
+
+``` python
+def coilDiameterBounds(dLoop:float, lWire:float, dWire:float, minPitch:float, arcAng:float) -> float:
+
+    """Calculate the minimum and maximum coil inside diameters, then calculates the required coil pitch and stretched length for a valid, chosen coil diameter."""
+
+    try:
+        k = pi*tan(asin(0.5*dLoop*arcAng / lWire)) / dLoop
+        dcMin = (dLoop - sqrt(dLoop**2 - (4*minPitch / k))) / 2
+        dcMax = (dLoop + sqrt(dLoop**2 - (4*minPitch / k))) / 2
+
+    except:
+
+        print("Zero-length window for coil diameter, adjust inputs and try again.")
+
+        return
+
+    print(f"Minimum coil diameter: {'%.1f' % (dcMin*1000)} mm, Maximum coil diameter: {'%.1f' % (dcMax*1000)} mm.")
+
+    print(f"Minimum shaft diameter: {'%.1f' % (1000*(dcMin - dWire))} mm, Maximum Shaft Diameter: {'%.1f' % (1000*(dcMax - dWire))} mm")
+
+    while True:
+        try:
+            dCoil = float(input("Enter shaft diameter (mm): ")) / 1000 + dWire
+        except TypeError:
+            print("Only numeric inputs are accepted, please try again.")
+
+        if dCoil >= dcMin and dCoil <= dcMax:
+            break
+            
+        print("Input outside of valid range, try again.")
+
+    meanPitch = pi*dCoil*tan(asin(0.5*dLoop*arcAng / lWire))
+    minorPitch = meanPitch*(dLoop - dCoil) / dLoop
+
+    print(f"Mean pitch: {'%.3f' % (1000*meanPitch)} mm, minimum pitch: {'%.3f' % (1000*minorPitch)} mm.")
+
+    print(f"Stretched length: {'%.1f' % (500*dLoop*arcAng)} mm")
+    print(f"Minor loop diameter: {'%.1f' % (1000*(dLoop - dCoil - dWire))} mm")
+```
+
+
 | Variable    | Value     | Unit                 |
 | ----------- | --------- | -------------------- |
 | Q           | 90        | W                    |
@@ -187,13 +230,13 @@ The proposed solution method is as follows:
 | F_new       | 1.04      | ul                   |
 | l           | 866.9796  | mm                   |
 | $p_m$       | 3.06      | mm                   |
-| D           | 70        | mm                   |
+| D           | 83        | mm                   |
 | $\theta$    | 300       | deg                  |
-| $d_c$       | 6.02      | mm                   |
 | $d_{shaft}$ | 5         | mm                   |
-| p           | 4.090     | mm                   |
-| L           | 183.3     | mm                   |
-| $D_i$       | 66.38     | mm                   |
+| $d_c$       | 6.02      | mm                   |
+| $\bar{p}$   | 4.896     | mm                   |
+| L           | 217.3     | mm                   |
+| $D_i$       | 76        | mm                   |
 
 
 ![[heating element geometry.png]]
