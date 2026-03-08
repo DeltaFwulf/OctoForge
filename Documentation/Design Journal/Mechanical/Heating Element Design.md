@@ -1,3 +1,6 @@
+
+![[heating element model.png]]
+*Heating element model*
 ## Element Geometry
 ---
 Given a maximum power requirement, heating element count, and selected material, the heating element geometry may be defined, and stock sourced.
@@ -239,14 +242,21 @@ def coilDiameterBounds(dLoop:float, lWire:float, dWire:float, minPitch:float, ar
 | $D_i$       | 76        | mm                   |
 
 
-![[heating element geometry.png]]
-*Heating element geometry modelled in FreeCAD.*
+![[coil geometry.png]]
+*Heating element coil model.*
 
-The calculated coil diameter falls into the typical 3 to 6 diameter range for the wire and so was accepted. While thinner gauge wires do offer cheaper and shorter lengths, they are more sensitive to non-constant diameters caused by scratches or nicks, and so without careful handling these are more likely to suffer damage from hot spots.
+One concern with resistive heating elements is hot-spotting, where thinner sections (with higher resistance) radiate at a higher surface flux than the bulk element. This causes premature burnout of elements and so more maintenance tasks. To mitigate this, a larger wire gauge, 18 AWG, was chosen despite being more expensive than finer wire gauges. For the same area deviation (caused, for example, by scratches, oxidation, etc) the proportional local area change is smaller the larger the nominal area is. In future, thinner elements may be designed following the same method, however they will require more careful handling and inspection prior to use.
 
 To model the heating element in FreeCAD, the *PathHelix* macro was used, from the [GrabBag](https://github.com/pyro9/GrabBag) repository by pyro9. Click [here](https://www.youtube.com/watch?v=COVKF25ttLY) for an installation guide. To create the full path, multiple sketches were [joined](https://www.youtube.com/watch?v=jE-H_30MbcA) together in a single binder, then an additive pipe used to sweep the wire cross section - beware, this takes a VERY long time to render.
 
+Following the advice found in [this](https://www.youtube.com/watch?v=I-5_MN5_Fmc&list=PLhA0ygLQR39mygehFiBQ72nzciFNVJfHL&index=18) video, a coil winding jig was designed to produce these elements from Kanthal wire stock.
 
+![[coil winding jig.png]]
+*Coil winding jig model*
+
+The jig will be mounted in a vice with the wire inlet groove accessible. A length of wire is threaded into the block and passed out of the front (wider hole side). This is then passed through the notch on the winding shaft and secured. The shaft is then backed off into the jig block. Next, a drill is attached to the free end of the winding shaft. To wind the coil, the drill is spun while slight compression is applied to the coil to keep the layers in contact.
+
+The coil, once produced in the jig, is stretched to length on the shaft to attain the desired pitch.
 ## Power Delivery
 ---
 To supply power to the elements, terminals are required. These must withstand the extreme temperatures of the chamber and elements, provide reliable electrical connection, and allow for simple element replacement in the event of damage.
