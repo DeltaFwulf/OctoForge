@@ -241,6 +241,7 @@ def coilDiameterBounds(dLoop:float, lWire:float, dWire:float, minPitch:float, ar
 | L           | 217.3     | mm                   |
 | $D_i$       | 76        | mm                   |
 
+This coil has a minimum pitch of 4.541 mm. This means that, should the element have to little resistance, it can be compressed by about one third and still meet the minimum pitch constraint.
 
 ![[coil geometry.png]]
 *Heating element coil model.*
