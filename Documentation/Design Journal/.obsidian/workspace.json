@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mechanical/Heating Element Design.md",
+                "file": "Mechanical/Insulation Design.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Heating Element Design"
+              "title": "Insulation Design"
             }
           },
           {
@@ -197,17 +197,20 @@
   },
   "active": "6e285d84a8bf14f1",
   "lastOpenFiles": [
-    "Mechanical/Frame Design.md",
-    "Mechanical/Thermal Modelling.md",
     "Mechanical/Learning to Use FreeCAD Effectively.md",
+    "Mechanical/Frame Design.md",
     "Mechanical/Heating Element Design.md",
+    "Design Specification.md",
+    "Test Campaign 1/Thermal Testing.md",
+    "Mechanical/Insulation Design.md",
+    "[[Heating.md",
+    "Mechanical/Thermal Modelling.md",
     "Mechanical/Pictures/coil geometry.png",
     "Mechanical/Pictures/heating element model.png",
     "Mechanical/Pictures/coil winding jig.png",
     "Power/Power Design.md",
     "Power/PowerDesignDevLog.md",
     "Tasks (move into issues).md",
-    "Design Specification.md",
     "Cooling Electronics.md",
     "Useful Design Tools.md",
     "Mechanical/Pictures/Steady State Thermal Plots/steady power vs rockwool thickness, 1200C.png",
@@ -217,7 +220,6 @@
     "Mechanical/Pictures/Steady State Thermal Plots/heat loss vs rockwool thickness.png",
     "Mechanical/Pictures/Steady State Thermal Plots/outer wall temperature vs rockwool thickness.png",
     "Mechanical/Pictures/Steady State Thermal Plots/wall heat loss against thickness(old).png",
-    "Test Campaign 1/Thermal Testing.md",
     "Test Campaign 1",
     "Mechanical/Pictures",
     "Mechanical/New folder",
