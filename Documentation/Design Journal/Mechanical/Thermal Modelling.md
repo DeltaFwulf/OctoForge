@@ -166,9 +166,3 @@ I have modelled the addition of a rockwool overwrap and MDF casing to see if we 
 **Effects of adding rockwool insulation**
 I found that by adding only 80mm of rockwool around the firebricks and 12mm of MDF as an outer casing, we can reduce our power use from 220W to only 150W at a chamber temperature of 1100℃. This is definitely worth including, as rockwool is easy to form and fairly inexpensive. It will also protect the fragile firebricks from being damaged by collisions with tools or when being handled/moved.
 
-# Heating Element Analysis
-
-## You guessed it, it's a resistance network (literally)
-
-we will model the wire as one long coil subject to blackbody / grey-body radiation and convection in a large black/grey body chamber (partially accurate assumptions). 
-
